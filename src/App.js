@@ -1,16 +1,14 @@
 import React from 'react';
 
+const todoList = [{id:1, title: 'Learn React'}, {id:2, title: 'Learn Redux'}, {id:3, title: 'Learn React Native'}];
+
 function App() {
   return (
     <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      <h1>Todo List</h1>
+      <ul>
+        {todoList.map(todo => <li key={todo.id}>{todo.title}</li>)}
+      </ul>
     </div>
   );
 }
