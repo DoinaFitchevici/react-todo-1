@@ -4,7 +4,7 @@ const todoList = [{id:1, title: 'Learn React'}, {id:2, title: 'Learn Redux'}, {i
 
 function App() {
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div>
       <h1>Todo List</h1>
       <ul>
         {todoList.map(todo => <li key={todo.id}>{todo.title}</li>)}
