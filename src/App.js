@@ -18,12 +18,12 @@ function App() {
   return (
     <div>
       <h1 className="text-4xl font-bold text-gray-800 my-4">Todo List</h1>
-      <ul class="list-disc list-inside ml-7" role="list">
+      <ul class="list-disc ml-10" role="list">
         {todoList.map((todo) => (
-          <li className=" " key={todo.id}>
+          <li key={todo.id}>
             <span>
               <a href={todo.url} target="_blank" rel="noopener noreferrer">
-                <span className="text-blue-500">→ {todo.title}</span>
+                <span className="text-blue-500"> {todo.title}</span>
               </a>
             </span>
           </li>
