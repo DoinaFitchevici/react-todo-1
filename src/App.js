@@ -1,13 +1,33 @@
-import React from 'react';
+import React from "react";
 
-const todoList = [{id:1, title: 'Learn React'}, {id:2, title: 'Learn Redux'}, {id:3, title: 'Learn React Native'}];
+const todoList = [
+  {
+    id: 1,
+    title: "Learn React",
+    url: "https://reactjs.org/",
+  },
+  {
+    id: 2,
+    title: "Learn Redux",
+    url: "https://redux.js.org/",
+  },
+  { id: 3, title: "Learn React Native", url: "https://reactnative.dev/" },
+];
 
 function App() {
   return (
     <div>
-      <h1>Todo List</h1>
-      <ul>
-        {todoList.map(todo => <li key={todo.id}>{todo.title}</li>)}
+      <h1 className="text-4xl font-bold text-gray-800 my-4">Todo List</h1>
+      <ul class="list-disc list-inside ml-7" role="list">
+        {todoList.map((todo) => (
+          <li className=" " key={todo.id}>
+            <span>
+              <a href={todo.url} target="_blank" rel="noopener noreferrer">
+                <span className="text-blue-500">→ {todo.title}</span>
+              </a>
+            </span>
+          </li>
+        ))}
       </ul>
     </div>
   );
