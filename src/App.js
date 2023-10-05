@@ -14,25 +14,26 @@ const todoList = [
   { id: 3, title: "Learn React Native", url: "https://reactnative.dev/" },
 ];
 
-const App = () => {
+function App() {
   return (
     <div>
       <h1 className="text-4xl font-bold text-gray-800 my-4">Todo List</h1>
       <ul class="list-disc ml-10">
         {todoList.map((todo) => (
           <li key={todo.id}>
-            <span>
-              <a href={todo.url} target="_blank" rel="noopener noreferrer">
-                <span className="text-blue-500 hover:text-black hover:underline">
-                  {todo.title}
-                </span>
-              </a>
-            </span>
+            <a
+              href={todo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:text-black hover:underline"
+            >
+              {todo.title}
+            </a>
           </li>
         ))}
       </ul>
     </div>
   );
-};
+}
 
 export default App;
