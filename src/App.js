@@ -14,7 +14,7 @@ const todoList = [
   { id: 3, title: "Learn React Native", url: "https://reactnative.dev/" },
 ];
 
-function App() {
+const App = () => {
   return (
     <div>
       <h1 className="text-4xl font-bold text-gray-800 my-4">Todo List</h1>
@@ -33,6 +33,6 @@ function App() {
       </ul>
     </div>
   );
-}
+};
 
 export default App;
