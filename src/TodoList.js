@@ -16,7 +16,7 @@ const todoList = [
 
 function TodoList() {
   return (
-    <ul class="list-disc ml-10">
+    <ul>
       {todoList.map((todo) => (
         <li key={todo.id}>
           <a

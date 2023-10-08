@@ -2,7 +2,7 @@ import React from "react";
 
 function AddTodoForm() {
   return (
-    <form className="space">
+    <form>
       <label htmlFor="todoTitle">Title</label>
       <input type="text" id="todoTitle"></input>
       <button type="submit">Add</button>
