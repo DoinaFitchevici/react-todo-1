@@ -1,3 +1,5 @@
+import TodoListItem from "./TodoListItem";
+
 const todoList = [
   {
     id: 1,
@@ -16,16 +18,7 @@ function TodoList() {
   return (
     <ul>
       {todoList.map((todo) => (
-        <li key={todo.id}>
-          <a
-            href={todo.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 hover:text-black hover:underline"
-          >
-            {todo.title}
-          </a>
-        </li>
+        <TodoListItem key={todo.id} todo={todo} />
       ))}
     </ul>
   );
