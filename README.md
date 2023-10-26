@@ -28,6 +28,10 @@ npm install npm@latest -g
 - Clone the repo
 
 ```sh
+SSH:
+git clone git@github.com:AmirhosseinOlyaei/react-todo.git
+
+HTTPS:
 git clone https://github.com/AmirhosseinOlyaei/react-todo.git
 ```
 
