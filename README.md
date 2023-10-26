@@ -9,6 +9,7 @@ This is a Todo List application built using React.js.
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
+- [Documentation](#documentation)
 
 ## Getting Started
 
@@ -61,7 +62,9 @@ Distributed under the MIT License. See LICENSE for more information.
 [issues-shield]: https://img.shields.io/github/issues/AmirhosseinOlyaei/repo.svg?style=flat-square
 [issues-url]: https
 
-## How to add a new todo item?
+## Documentation
+
+### How to add a new todo item?
 
 1. First, click on the "Add Todo" button at the bottom right corner of the app.
 
@@ -73,7 +76,7 @@ Distributed under the MIT License. See LICENSE for more information.
 
 > Remember, if you don't complete a todo item within a certain time, it will automatically be moved to the "Overdue" category. You can reassign a todo item to any other category by clicking on the "Reassign" button.
 
-## How to mark a todo item as completed?
+### How to mark a todo item as completed?
 
 1. Click on the todo item that you want to mark as completed.
 
@@ -81,7 +84,7 @@ Distributed under the MIT License. See LICENSE for more information.
 
 > Please note that you cannot manually remove a todo item from the completed list. This list automatically updates to reflect your progress.
 
-## How to delete a todo item?
+### How to delete a todo item?
 
 1. Find the todo item that you want to delete in the list of todos.
 
