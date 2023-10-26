@@ -1,10 +1,10 @@
-function TodoListItem(props) {
+function TodoListItem({ todo }) {
   // handle the case when props.todo is undefined or null to prevent potential runtime errors.
-  if (!props.todo) {
+  if (!todo) {
     return null;
   }
   // Destructure todo prop to get title and url
-  const { title, url } = props.todo;
+  const { title, url } = todo;
   return (
     <li>
       <a href={url} target="_blank" rel="noopener noreferrer">
