@@ -49,7 +49,7 @@ The application will open in your default web browser at http://localhost:3000. 
 
 ### License
 
-Distributed under the MIT License. See LICENSE for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/AmirhosseinOlyaei/react-todo/blob/lesson_1_4/LICENSE) for more information.
 
 </s>
 
