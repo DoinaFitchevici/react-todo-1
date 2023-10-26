@@ -1,16 +1,37 @@
-import React from 'react';
+import React from "react";
+
+const todoList = [
+  {
+    id: 1,
+    title: "Learn React",
+    url: "https://reactjs.org/",
+  },
+  {
+    id: 2,
+    title: "Learn Redux",
+    url: "https://redux.js.org/",
+  },
+  { id: 3, title: "Learn React Native", url: "https://reactnative.dev/" },
+];
 
 function App() {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className="text-4xl font-bold text-gray-800 my-4">Todo List</h1>
+      <ul class="list-disc ml-10">
+        {todoList.map((todo) => (
+          <li key={todo.id}>
+            <a
+              href={todo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:text-black hover:underline"
+            >
+              {todo.title}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
