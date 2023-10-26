@@ -27,7 +27,7 @@ npm install npm@latest -g
 - Clone the repo
 
 ```sh
-git clone https://github.com/your_username_/todo-list.git
+git clone https://github.com/AmirhosseinOlyaei/react-todo.git
 ```
 
 - Install NPM packages
