@@ -3,8 +3,9 @@
     <img alt="Todo List" src="./public/todo.png" />
   </a>
 </p>
-
-# React Todo List
+<h1 align="center">
+  React App: Todo List™
+</h1>
 
 This is a Todo List application built using React.js.
 
