@@ -9,7 +9,8 @@ This is a Todo List application built using React.js.
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Documentation](#documentation)
+- [User Manual](#user-manual)
+- [Additional Resources](#additional-resources)
 
 ## Getting Started
 
@@ -60,7 +61,7 @@ Distributed under the MIT License. See [LICENSE](https://github.com/AmirhosseinO
 [![stars-shield](https://img.shields.io/github/stars/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/stargazers)
 [![issues-shield](https://img.shields.io/github/issues/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/issues)
 
-## Documentation
+## User Manual
 
 ### How to add a new todo item?
 
@@ -91,3 +92,10 @@ Distributed under the MIT License. See [LICENSE](https://github.com/AmirhosseinO
 3. The todo item will now be removed from the list.
 
 > Please note that this is a basic example of a todo list app. In a real-world scenario, the process of deleting a todo item may involve additional steps, such as confirming the action or handling potential errors. Additionally, this operation might require a different approach if the todo list is being fetched from an API, as it may require making a DELETE request to the API.
+
+## Additional Resources
+
+- [React documentation](https://react.dev/){:target="\_blank"}
+- [Chakra UI documentation](https://chakra-ui.com/){:target="\_blank"}
+- [Beautiful DND documentation](https://github.com/atlassian/react-beautiful-dnd){:target="\_blank"}
+- [Code The Dream organization](https://codethedream.org/){:target="\_blank"}
