@@ -55,16 +55,14 @@ The application will open in your default web browser at http://localhost:3000. 
 
 Distributed under the MIT License. See [LICENSE](https://github.com/AmirhosseinOlyaei/react-todo/blob/lesson_1_4/LICENSE) for more information.
 
-</s>
-
-[contributors-shield]: https://img.shields.io/github/contributors/AmirhosseinOlyaei/repo.svg?style=flat-square
-[contributors-url]: https://github.com/AmirhosseinOlyaei/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/AmirhosseinOlyaei/repo.svg?style=flat-square
-[forks-url]: https://github.com/AmirhosseinOlyaei/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/AmirhosseinOlyaei/repo.svg?style=flat-square
-[stars-url]: https://github.com/AmirhosseinOlyaei/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/AmirhosseinOlyaei/repo.svg?style=flat-square
-[issues-url]: https
+![contributors-shield](https://img.shields.io/github/contributors/AmirhosseinOlyaei/AmirhosseinOlyaei.svg)
+[Contributors](https://github.com/AmirhosseinOlyaei/react-todo/graphs/contributors)
+![forks-shield](https://img.shields.io/github/forks/AmirhosseinOlyaei/AmirhosseinOlyaei.svg)
+[Forks](https://github.com/AmirhosseinOlyaei/react-todo/network/members)
+![stars-shield](https://img.shields.io/github/stars/AmirhosseinOlyaei/AmirhosseinOlyaei.svg)
+[Stars](https://github.com/AmirhosseinOlyaei/react-todo/stargazers)
+![issues-shield](https://img.shields.io/github/issues/AmirhosseinOlyaei/AmirhosseinOlyaei.svg)
+[Issues](https://github.com/AmirhosseinOlyaei/react-todo/issues)
 
 ## Documentation
 
