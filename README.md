@@ -55,14 +55,10 @@ The application will open in your default web browser at http://localhost:3000. 
 
 Distributed under the MIT License. See [LICENSE](https://github.com/AmirhosseinOlyaei/react-todo/blob/lesson_1_4/LICENSE) for more information.
 
-![contributors-shield](https://img.shields.io/github/contributors/AmirhosseinOlyaei/AmirhosseinOlyaei.svg)
-[Contributors](https://github.com/AmirhosseinOlyaei/react-todo/graphs/contributors)
-![forks-shield](https://img.shields.io/github/forks/AmirhosseinOlyaei/AmirhosseinOlyaei.svg)
-[Forks](https://github.com/AmirhosseinOlyaei/react-todo/network/members)
-![stars-shield](https://img.shields.io/github/stars/AmirhosseinOlyaei/AmirhosseinOlyaei.svg)
-[Stars](https://github.com/AmirhosseinOlyaei/react-todo/stargazers)
-![issues-shield](https://img.shields.io/github/issues/AmirhosseinOlyaei/AmirhosseinOlyaei.svg)
-[Issues](https://github.com/AmirhosseinOlyaei/react-todo/issues)
+[![contributors-shield](https://img.shields.io/github/contributors/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/graphs/contributors)
+[![forks-shield](https://img.shields.io/github/forks/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/network/members)
+[![stars-shield](https://img.shields.io/github/stars/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/stargazers)
+[![issues-shield](https://img.shields.io/github/issues/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/issues)
 
 ## Documentation
 
