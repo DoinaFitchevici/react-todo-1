@@ -1,8 +1,8 @@
-# React Todo List
+# React Todo List 💼
 
 This is a Todo List application built using React.js.
 
-## Table of Contents
+## Table of Contents 📋
 
 - [Getting Started](#getting-started)
 - [Prerequisites](#prerequisites)
@@ -13,11 +13,11 @@ This is a Todo List application built using React.js.
 - [Author](#author)
 - [License](#license)
 
-## Getting Started
+## Getting Started 🚀
 
 To get a local copy up and running follow these steps.
 
-### Prerequisites
+### Prerequisites 📦
 
 - npm
 
@@ -27,7 +27,7 @@ npm install npm@latest -g
 
 > It updates npm to the latest version.
 
-### Installation
+### Installation 📥
 
 - Clone the repo
 
@@ -45,7 +45,7 @@ git clone https://github.com/AmirhosseinOlyaei/react-todo.git
 npm install
 ```
 
-### Usage
+### Usage 💡
 
 To run the application, execute the following command:
 
@@ -55,9 +55,9 @@ npm start
 
 The application will open in your default web browser at http://localhost:3000. You can add new todo items, mark them as complete, and delete them.
 
-## User Manual
+## User Manual 📚
 
-### How to add a new todo item?
+### How to add a new todo item? ➕
 
 1. First, click on the "Add Todo" button at the bottom right corner of the app.
 
@@ -69,7 +69,7 @@ The application will open in your default web browser at http://localhost:3000. 
 
 > Remember, if you don't complete a todo item within a certain time, it will automatically be moved to the "Overdue" category. You can reassign a todo item to any other category by clicking on the "Reassign" button.
 
-### How to mark a todo item as completed?
+### How to mark a todo item as completed? ✅
 
 1. Click on the todo item that you want to mark as completed.
 
@@ -77,7 +77,7 @@ The application will open in your default web browser at http://localhost:3000. 
 
 > Please note that you cannot manually remove a todo item from the completed list. This list automatically updates to reflect your progress.
 
-### How to delete a todo item?
+### How to delete a todo item? 🗑️
 
 1. Find the todo item that you want to delete in the list of todos.
 
@@ -87,7 +87,7 @@ The application will open in your default web browser at http://localhost:3000. 
 
 > Please note that this is a basic example of a todo list app. In a real-world scenario, the process of deleting a todo item may involve additional steps, such as confirming the action or handling potential errors. Additionally, this operation might require a different approach if the todo list is being fetched from an API, as it may require making a DELETE request to the API.
 
-## Additional Resources
+## Additional Resources 🌐
 
 - [React](https://react.dev/)
 - [Chakra UI](https://chakra-ui.com/)
@@ -97,11 +97,11 @@ The application will open in your default web browser at http://localhost:3000. 
 - [Markdown](https://www.markdownguide.org/)
 - [Code The Dream organization](https://codethedream.org/)
 
-## Author
+## Author 👨‍💻
 
 - [Amir Olyaei](https://github.com/AmirhosseinOlyaei)
 
-## License
+## License 📜
 
 Distributed under the MIT License. See [LICENSE](https://github.com/AmirhosseinOlyaei/react-todo/blob/lesson_1_4/LICENSE) for more information.
 
