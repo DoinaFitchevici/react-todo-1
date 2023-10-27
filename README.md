@@ -91,6 +91,7 @@ The application will open in your default web browser at http://localhost:3000. 
 
 - [React](https://react.dev/)
 - [Chakra UI](https://chakra-ui.com/)
+- [Learn React](https://scrimba.com/learn/learnreact)
 - [Beautiful DND](https://github.com/atlassian/react-beautiful-dnd)
 - [Markdown](https://www.markdownguide.org/)
 - [Code The Dream organization](https://codethedream.org/)
