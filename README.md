@@ -8,9 +8,10 @@ This is a Todo List application built using React.js.
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 - [User Manual](#user-manual)
 - [Additional Resources](#additional-resources)
+- [Author](#author)
+- [License](#license)
 
 ## Getting Started
 
@@ -52,15 +53,6 @@ npm start
 
 The application will open in your default web browser at http://localhost:3000. You can add new todo items, mark them as complete, and delete them.
 
-### License
-
-Distributed under the MIT License. See [LICENSE](https://github.com/AmirhosseinOlyaei/react-todo/blob/lesson_1_4/LICENSE) for more information.
-
-[![contributors-shield](https://img.shields.io/github/contributors/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/graphs/contributors)
-[![forks-shield](https://img.shields.io/github/forks/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/network/members)
-[![stars-shield](https://img.shields.io/github/stars/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/stargazers)
-[![issues-shield](https://img.shields.io/github/issues/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/issues)
-
 ## User Manual
 
 ### How to add a new todo item?
@@ -95,7 +87,21 @@ Distributed under the MIT License. See [LICENSE](https://github.com/AmirhosseinO
 
 ## Additional Resources
 
-- [React documentation](https://react.dev/){:target="\_blank"}
-- [Chakra UI documentation](https://chakra-ui.com/){:target="\_blank"}
-- [Beautiful DND documentation](https://github.com/atlassian/react-beautiful-dnd){:target="\_blank"}
-- [Code The Dream organization](https://codethedream.org/){:target="\_blank"}
+- [React](https://react.dev/)
+- [Chakra UI](https://chakra-ui.com/)
+- [Beautiful DND](https://github.com/atlassian/react-beautiful-dnd)
+- [Markdown](https://www.markdownguide.org/)
+- [Code The Dream organization](https://codethedream.org/)
+
+## Author
+
+- [Amir Olyaei](https://github.com/AmirhosseinOlyaei)
+
+### License
+
+Distributed under the MIT License. See [LICENSE](https://github.com/AmirhosseinOlyaei/react-todo/blob/lesson_1_4/LICENSE) for more information.
+
+[![contributors-shield](https://img.shields.io/github/contributors/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/graphs/contributors)
+[![forks-shield](https://img.shields.io/github/forks/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/network/members)
+[![stars-shield](https://img.shields.io/github/stars/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/stargazers)
+[![issues-shield](https://img.shields.io/github/issues/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/issues)
