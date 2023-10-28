@@ -3,9 +3,11 @@
     <img alt="Todo List" src="./public/todo.png" />
   </a>
 </p>
-<h1 style="text-align: center; color: #b48ead;">
+<!-- <p align="center" style="color: #b48ead;">
   React App: Todo List™
-</h1>
+</p> -->
+
+# <div align="center" style="color: #b48ead;">React App: Todo List™</div>
 
 [![Follow @AmirhosseinOlyaei](https://img.shields.io/github/followers/AmirhosseinOlyaei?label=Follow%20@AmirhosseinOlyaei&style=social)](https://github.com/AmirhosseinOlyaei?screen_name=AmirhosseinOlyaei)
 [![Website](https://img.shields.io/badge/-website-CDA4DE)](https://react-todo-amiro.vercel.app/)
