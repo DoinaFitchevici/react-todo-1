@@ -22,6 +22,18 @@ This is a <span style="color: #b48ead;">Todo List </span> application built usin
   and delete them from the list.
 - The app also includes functionalities like filtering tasks by status (completed or not) and sorting them in ascending or descending.
 
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
+
+# TODOs:
+
+- <r>TODO:</r> Important thing to do
+- <o>TODO:</o> Less important thing to do
+- <g>DONE:</g> Breath deeply and improve karma
+
 ## 📋 Table of Contents
 
 - [Getting Started](#🚀-getting-started)
