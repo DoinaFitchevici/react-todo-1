@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="">
+  <a href="https://react-todo-amiro.vercel.app">
     <img alt="Todo List" src="./public/todo.png" />
   </a>
 </p>
@@ -7,7 +7,7 @@
   React App: Todo List™
 </p> -->
 
-# <div align="center" style="color: #b48ead;">React App: Todo List™</div>
+# <span style="color: #b48ead;">React App: Todo List™</span>
 
 [![Follow @AmirhosseinOlyaei](https://img.shields.io/github/followers/AmirhosseinOlyaei?label=Follow%20@AmirhosseinOlyaei&style=social)](https://github.com/AmirhosseinOlyaei?screen_name=AmirhosseinOlyaei)
 [![Website](https://img.shields.io/badge/-website-CDA4DE)](https://react-todo-amiro.vercel.app/)
