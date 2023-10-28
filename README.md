@@ -3,7 +3,7 @@
     <img alt="Todo List" src="./public/todo.png" />
   </a>
 </p>
-<h1 align="center" style="color: #b48ead;">
+<h1 style="text-align: center; color: #b48ead;">
   React App: Todo List™
 </h1>
 
