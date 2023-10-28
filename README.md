@@ -6,12 +6,12 @@
 <h1 align="center">
   React App: Todo List™
 </h1>
-<p align="center">
-  <a href="https://github.com/AmirhosseinOlyaei?screen_name=AmirhosseinOlyaei">
+<p align="center" style="text-align: center;">
+  <a href="https://github.com/AmirhosseinOlyaei?screen_name=AmirhosseinOlyaei" style="text-decoration: none;">
     <img src="https://img.shields.io/github/followers/AmirhosseinOlyaei?label=Follow%20@AmirhosseinOlyaei&style=social" alt="Follow @AmirhosseinOlyaei" />
   </a>
-  <a href="https://react-todo-amiro.vercel.app/" target="_blank">
-    <img alt="Website" src="https://img.shields.io/badge/-website-000264" />
+  <a href="https://react-todo-amiro.vercel.app/" target="_blank" style="text-decoration: none;">
+    <img alt="Website" src="https://img.shields.io/badge/-website-000234" />
   </a>
 </p>
 
