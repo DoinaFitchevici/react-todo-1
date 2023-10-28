@@ -3,11 +3,9 @@
     <img alt="Todo List" src="./public/todo.png" />
   </a>
 </p>
-<!-- <p align="center" style="color: #b48ead;">
+<h1 align="center">
   React App: Todo List™
-</p> -->
-
-# <span style="color: #b48ead;">React App: Todo List™</span>
+</h1>
 
 [![Follow @AmirhosseinOlyaei](https://img.shields.io/github/followers/AmirhosseinOlyaei?label=Follow%20@AmirhosseinOlyaei&style=social)](https://github.com/AmirhosseinOlyaei?screen_name=AmirhosseinOlyaei)
 [![Website](https://img.shields.io/badge/-website-CDA4DE)](https://react-todo-amiro.vercel.app/)
@@ -18,7 +16,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](./LICENSE)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/AmirhosseinOlyaei?color=darkgreen)](https://github.com/sponsors/AmirhosseinOlyaei)
 
-This is a Todo List application built using React.js.
+This is a <span style="color: #b48ead;">Todo List </span> application built using React.js.
 
 - It allows you to add tasks, mark them as completed
   and delete them from the list.
