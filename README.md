@@ -6,8 +6,21 @@
 <h1 align="center">
   React App: Todo List™
 </h1>
+<p align="center">
+<a href="https://github.com/AmirhosseinOlyaei?screen_name=AmirhosseinOlyaei">
+  <img src="https://img.shields.io/github/followers/AmirhosseinOlyaei?label=Follow%20@AmirhosseinOlyaei&style=social" alt="Follow @AmirhosseinOlyaei" />
+</a>
+  <a href="https://react-todo-amiro.vercel.app/">
+    <img alt="Website" src="https://img.shields.io/badge/-website-000234">
+  </a>
+</p>
 
 This is a Todo List application built using React.js.
+
+- It allows you to add tasks, mark them as completed
+  and delete them from the list.
+- An option to filter out all completed tasks or just show active ones.
+- The app also includes functionalities like filtering tasks by status (completed or not) and sorting them in ascending or descending.
 
 ## 📋 Table of Contents
 
@@ -110,9 +123,13 @@ The application will open in your default web browser at http://localhost:3000. 
 
 ## 📜 License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/AmirhosseinOlyaei/react-todo/blob/lesson_1_4/LICENSE) for more information.
+Distributed under the MIT License. See [`LICENSE`](./LICENSE) for more information.
 
+[![Follow @AmirhosseinOlyaei](https://img.shields.io/github/followers/AmirhosseinOlyaei?label=Follow%20@AmirhosseinOlyaei&style=social)](https://github.com/AmirhosseinOlyaei?screen_name=AmirhosseinOlyaei)
 [![contributors-shield](https://img.shields.io/github/contributors/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/graphs/contributors)
 [![forks-shield](https://img.shields.io/github/forks/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/network/members)
-[![stars-shield](https://img.shields.io/github/stars/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/stargazers)
-[![issues-shield](https://img.shields.io/github/issues/AmirhosseinOlyaei/react-todo.svg)](https://github.com/AmirhosseinOlyaei/react-todo/issues)
+[![stars-shield](https://img.shields.io/github/stars/AmirhosseinOlyaei/react-todo.svg?color=lightblue)](https://github.com/AmirhosseinOlyaei/react-todo/stargazers)
+[![issues-shield](https://img.shields.io/github/issues/AmirhosseinOlyaei/react-todo.svg?color=pink)](https://github.com/AmirhosseinOlyaei/react-todo/issues)
+[![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](./LICENSE)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/AmirhosseinOlyaei?color=darkgreen)](https://github.com/sponsors/AmirhosseinOlyaei)
+[![Website](https://img.shields.io/badge/-website-CDA4DE)](https://example.com)
