@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="https://react-todo-amiro.vercel.app">
+  <a href="">
     <img alt="Todo List" src="./public/todo.png" />
   </a>
 </p>
-<h1 align="center">
+<h1 align="center" style="color: #b48ead;">
   React App: Todo List™
 </h1>
 
@@ -16,23 +16,11 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](./LICENSE)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/AmirhosseinOlyaei?color=darkgreen)](https://github.com/sponsors/AmirhosseinOlyaei)
 
-This is a <span style="color: #b48ead;">Todo List </span> application built using React.js.
+This is a Todo List application built using React.js.
 
 - It allows you to add tasks, mark them as completed
   and delete them from the list.
 - The app also includes functionalities like filtering tasks by status (completed or not) and sorting them in ascending or descending.
-
-<style>
-r { color: Red }
-o { color: Orange }
-g { color: Green }
-</style>
-
-# TODOs:
-
-- <r>TODO:</r> Important thing to do
-- <o>TODO:</o> Less important thing to do
-- <g>DONE:</g> Breath deeply and improve karma
 
 ## 📋 Table of Contents
 
