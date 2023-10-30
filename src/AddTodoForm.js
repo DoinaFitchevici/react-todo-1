@@ -10,10 +10,11 @@ function AddTodoForm(props) {
 
   function handleAddTodo(event) {
     event.preventDefault();
-    // Use todoTitle from state
-    props.onAddTodo(todoTitle);
-    // Reset the form so the text input value is cleared
-    event.target.reset();
+    props.onAddTodo({
+      title: todoTitle,
+      id: Date.now(), // Placeholder for generating a unique ID
+    });
+    setTodoTitle(""); // Reset the input value
   }
 
   return (
