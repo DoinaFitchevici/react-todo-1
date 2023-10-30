@@ -24,18 +24,22 @@ This is a Todo List application built using React.js.
 
 ## 📋 Table of Contents
 
-- [Getting Started](#🚀-getting-started)
-- [Prerequisites](#📦-prerequisites)
-- [Installation](#📥-installation)
-- [Usage](#💡-usage)
-- [User Manual](#📚-user-manual)
-- [Additional Resources](#🎓-additional-resources)
-- [Author](#👨‍💻-author)
-- [License](#📜-license)
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [User Manual](#user-manual)
+- [Additional Resources](#additional-resources)
+- [Author](#author)
+- [License](#license)
+
+<a id="getting-started"></a>
 
 ## 🚀 Getting Started
 
 To get a local copy up and running follow these steps.
+
+<a id="prerequisites"></a>
 
 ### 📦 Prerequisites
 
@@ -46,6 +50,8 @@ npm install npm@latest -g
 ```
 
 > It updates npm to the latest version.
+
+<a id="installation"></a>
 
 ### 📥 Installation
 
@@ -65,6 +71,8 @@ git clone https://github.com/AmirhosseinOlyaei/react-todo.git
 npm install
 ```
 
+<a id="usage"></a>
+
 ### 💡 Usage
 
 To run the application, execute the following command:
@@ -74,6 +82,8 @@ npm start
 ```
 
 The application will open in your default web browser at http://localhost:3000. You can add new todo items, mark them as complete, and delete them.
+
+<a id="user-manual"></a>
 
 ## 📚 User Manual
 
@@ -107,6 +117,8 @@ The application will open in your default web browser at http://localhost:3000. 
 
 > Please note that this is a basic example of a todo list app. In a real-world scenario, the process of deleting a todo item may involve additional steps, such as confirming the action or handling potential errors. Additionally, this operation might require a different approach if the todo list is being fetched from an API, as it may require making a DELETE request to the API.
 
+<a id="additional-resources"></a>
+
 ## 🎓 Additional Resources
 
 - [React](https://react.dev/)
@@ -117,9 +129,13 @@ The application will open in your default web browser at http://localhost:3000. 
 - [Markdown](https://www.markdownguide.org/)
 - [Code The Dream organization](https://codethedream.org/)
 
+<a id="author"></a>
+
 ## 👨‍💻 Author
 
 - [Amir Olyaei](https://github.com/AmirhosseinOlyaei)
+
+<a id="license"></a>
 
 ## 📜 License
 
