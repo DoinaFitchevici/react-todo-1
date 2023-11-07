@@ -10,6 +10,7 @@ function AddTodoForm({ onAddTodo }) {
 
   function handleAddTodo(event) {
     event.preventDefault();
+    if (!todoTitle.length) return;
     onAddTodo({
       title: todoTitle,
       id: Date.now(), // Placeholder for generating a unique ID
