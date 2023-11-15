@@ -1,4 +1,11 @@
+import { useRef, useEffect } from "react";
+
 function InputWithLabel({ type, id, name, value, onChange, children }) {
+  const inputRef = useRef();
+  useEffect(() => {
+    inputRef.current.focus();
+  });
+
   return (
     <>
       <label htmlFor="todoTitle">{children}</label>
@@ -8,7 +15,7 @@ function InputWithLabel({ type, id, name, value, onChange, children }) {
         name={name}
         value={value}
         onChange={onChange}
-        autoFocus
+        ref={inputRef}
       ></input>
     </>
   );
