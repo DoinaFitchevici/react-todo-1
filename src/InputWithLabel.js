@@ -8,6 +8,7 @@ function InputWithLabel({ type, id, name, value, onChange, children }) {
         name={name}
         value={value}
         onChange={onChange}
+        autoFocus
       ></input>
     </>
   );
