@@ -1,11 +1,16 @@
-function TodoListItem({ todo }) {
-  // Destructure todo prop to get title and url
-  const { title, url } = todo;
+function TodoListItem({ todo, onRemoveTodo }) {
+  const { title, id } = todo;
   return (
     <li>
-      <a href={url} target="_blank" rel="noopener noreferrer">
-        {title}
-      </a>
+      {title}
+      <button
+        type="button"
+        onClick={() => {
+          onRemoveTodo(id);
+        }}
+      >
+        Remove
+      </button>
     </li>
   );
 }
