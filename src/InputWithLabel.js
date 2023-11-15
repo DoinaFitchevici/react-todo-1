@@ -1,7 +1,7 @@
-function InputWithLabel({ type, id, name, value, onChange, label }) {
+function InputWithLabel({ type, id, name, value, onChange, children }) {
   return (
     <>
-      <label htmlFor="todoTitle">{label}</label>
+      <label htmlFor="todoTitle">{children}</label>
       <input
         type={type}
         id={id}
