@@ -2,21 +2,26 @@ import { useState, useEffect } from "react";
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
 
-function useSemiPersistentState() {
-  // Read "savedTodoList" from localStorage and parse it to an array or use an empty array
-  const savedTodoList = JSON.parse(localStorage.getItem("savedTodoList")) || [];
-  const [todoList, setTodoList] = useState(savedTodoList);
-
-  // Define a useEffect hook to save the todoList to local storage
-  useEffect(() => {
-    // Save the todoList to local storage with the key "savedTodoList"
-    localStorage.setItem("savedTodoList", JSON.stringify(todoList));
-  }, [todoList]);
-  return [todoList, setTodoList];
-}
 function App() {
   // Use the new custom hook
-  const [todoList, setTodoList] = useSemiPersistentState();
+  // const [todoList, setTodoList] = useSemiPersistentState();
+  // Copied useState and useEffect hooks from useSemiPersistentState
+  // const savedTodoList = JSON.parse(localStorage.getItem("savedTodoList")) || [];
+  const [todoList, setTodoList] = useState([]);
+
+  // useEffect(() => {
+  //   localStorage.setItem("savedTodoList", JSON.stringify(todoList));
+  // }, [todoList]);
+
+  useEffect(() => {
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ data: { todoList: todoList } });
+      }, 2000);
+    }).then((result) => {
+      setTodoList(result.data.todoList);
+    });
+  }, []);
 
   function addTodo(newTodo) {
     setTodoList([...todoList, newTodo]);
