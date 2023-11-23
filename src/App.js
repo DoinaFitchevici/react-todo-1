@@ -34,6 +34,10 @@ function App() {
   function removeTodo(id) {
     setTodoList(todoList.filter((todo) => todo.id !== id));
   }
+  //App.js, add the callback handler function onReorderTodo and pass it as props to TodoList component
+  const onReorderTodo = (newTodoList) => {
+    setTodoList(newTodoList);
+  };
 
   return (
     <>
@@ -42,7 +46,11 @@ function App() {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
+        <TodoList
+          todoList={todoList}
+          onRemoveTodo={removeTodo}
+          onReorderTodo={onReorderTodo}
+        />
       )}
     </>
   );
