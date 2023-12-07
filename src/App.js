@@ -31,6 +31,7 @@ function App() {
     } catch (error) {
       console.log(error);
     }
+
     // console.log(data);
   };
   useEffect(() => {
@@ -52,8 +53,49 @@ function App() {
     return todoList.filter((todo) => !todo.completed).length;
   };
 
-  const addTodo = (newTodo) => {
-    setTodoList([...todoList, newTodo]);
+  const addTodo = async (newTodo) => {
+    // Make a POST request to add a new todo to Airtable
+    const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}`;
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_TOKEN}`,
+      },
+      body: JSON.stringify({
+        fields: {
+          title: newTodo.title,
+        },
+      }),
+    };
+
+    try {
+      const response = await fetch(url, options);
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+
+      const responseData = await response.json();
+
+      // Update the todo list with the new todo received from the API response
+      setTodoList((prevTodoList) => [
+        ...prevTodoList,
+        {
+          id: responseData.id,
+          title: responseData.fields.title,
+          completed: false,
+        },
+      ]);
+
+      setCompletionMessage(`Todo added successfully!`);
+      const messageTimer = setTimeout(() => setCompletionMessage(""), 3000);
+      return () => clearTimeout(messageTimer);
+    } catch (error) {
+      console.error("Error adding todo:", error);
+      setCompletionMessage("Failed to add todo. Please try again.");
+      const messageTimer = setTimeout(() => setCompletionMessage(""), 3000);
+      return () => clearTimeout(messageTimer);
+    }
   };
 
   const removeTodo = (id) => {

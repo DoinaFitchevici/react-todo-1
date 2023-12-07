@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function TodoListItem({ todo, onRemoveTodo, onToggleComplete }) {
   const { title, id, completed } = todo;
