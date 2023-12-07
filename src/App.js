@@ -74,11 +74,11 @@ function App() {
         },
       ]);
 
-      setCompletionMessage(`Todo added successfully!`);
-      const messageTimer = setTimeout(() => setCompletionMessage(""), 3000);
-      return () => clearTimeout(messageTimer);
+      //   setCompletionMessage(`Todo added successfully!`);
+      //   const messageTimer = setTimeout(() => setCompletionMessage(""), 3000);
+      //   return () => clearTimeout(messageTimer);
     } catch (error) {
-      console.error("Error adding todo:", error);
+      //   console.error("Error adding todo:", error);
       setCompletionMessage("Failed to add todo. Please try again.");
       const messageTimer = setTimeout(() => setCompletionMessage(""), 3000);
       return () => clearTimeout(messageTimer);
