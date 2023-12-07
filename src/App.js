@@ -25,33 +25,20 @@ function App() {
       const todos = data.records.map((record) => ({
         title: record.fields.title,
         id: record.id,
+        completed: false,
       }));
       setTodoList(todos);
       setIsLoading(false);
     } catch (error) {
-      console.log(error);
+      console.log("Error fetching data: ", error);
+    } finally {
+      setIsLoading(false);
     }
-
     // console.log(data);
   };
   useEffect(() => {
     fetchData();
   }, []);
-
-  useEffect(() => {
-    if (!isLoading) {
-      localStorage.setItem("savedTodoList", JSON.stringify(todoList));
-      setCompletionMessage(
-        `Congratulations, you have ${getIncompleteCount()} left to complete.`
-      );
-      const messageTimer = setTimeout(() => setCompletionMessage(""), 3000);
-      return () => clearTimeout(messageTimer);
-    }
-  }, [todoList, isLoading]);
-
-  const getIncompleteCount = () => {
-    return todoList.filter((todo) => !todo.completed).length;
-  };
 
   const addTodo = async (newTodo) => {
     // Make a POST request to add a new todo to Airtable
