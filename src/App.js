@@ -31,11 +31,6 @@ function App() {
     } catch (error) {
       console.log(error);
     }
-    return {
-      data: {
-        todoList: JSON.parse(localStorage.getItem("savedTodoList")) || [],
-      },
-    };
     // console.log(data);
   };
   useEffect(() => {
