@@ -14,7 +14,7 @@ function AddTodoForm({ onAddTodo }) {
     if (!todoTitle.length) return;
     onAddTodo({
       title: todoTitle,
-      id: Date.now(), // Placeholder for generating a unique ID
+      // id: Date.now(), // Placeholder for generating a unique ID
     });
     setTodoTitle(""); // Reset the input value
   }
