@@ -25,7 +25,7 @@ function App() {
       const todos = data.records.map((record) => ({
         title: record.fields.title,
         id: record.id,
-        completed: false,
+        completed: record.fields.completed,
       }));
       setTodoList(todos);
       setIsLoading(false);
@@ -39,6 +39,62 @@ function App() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const updateTodo = async (todo) => {
+    try {
+      const airtableData = {
+        fields: {
+          completed: todo.completed,
+        },
+      };
+      const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/${todo.id}`;
+      const response = await fetch(url, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_TOKEN}`,
+        },
+        body: JSON.stringify(airtableData),
+      });
+
+      if (!response.ok) {
+        const message = `Error has ocurred:
+                             ${response.status}`;
+        throw new Error(message);
+      }
+
+      const dataResponse = await response.json();
+      return dataResponse;
+    } catch (error) {
+      console.log(error.message);
+      return null;
+    }
+  };
+
+  const deleteTodo = async (id) => {
+    try {
+      const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/${id}`;
+      const response = await fetch(url, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_TOKEN}`,
+        },
+      });
+
+      if (!response.ok) {
+        const message = `Error has ocurred:
+                             ${response.status}`;
+        throw new Error(message);
+      }
+
+      const dataResponse = await response.json();
+      return dataResponse;
+    } catch (error) {
+      console.log(error.message);
+      return null;
+    }
+  };
 
   const addTodo = async (newTodo) => {
     // Make a POST request to add a new todo to Airtable
@@ -86,6 +142,7 @@ function App() {
   };
 
   const removeTodo = (id) => {
+    deleteTodo(id);
     setTodoList(todoList.filter((todo) => todo.id !== id));
   };
 
@@ -97,6 +154,7 @@ function App() {
     const updatedTodoList = todoList.map((todo) =>
       todo.id === id ? { ...todo, completed } : todo
     );
+    updateTodo(updatedTodoList.find((itemTodo) => itemTodo.id === id));
     setTodoList(updatedTodoList);
   };
 
