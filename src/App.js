@@ -29,7 +29,7 @@ function App() {
     try {
       const response = await fetch(url, options);
       if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
+        throw new Error(`Error fetching data: ${response.status}`);
       }
       const { records } = await response.json();
       const todos = records.map(({ fields: { title, completed }, id }) => ({
@@ -79,16 +79,14 @@ function App() {
       });
 
       if (!response.ok) {
-        const message = `Error has ocurred:
-                             ${response.status}`;
+        const message = `Error updating todo: ${response.status}`;
         throw new Error(message);
       }
 
       const dataResponse = await response.json();
       return dataResponse;
     } catch (error) {
-      console.log(error.message);
-      return null;
+      throw new Error(`Error updating todo: ${error.message}`);
     }
   };
 
@@ -104,16 +102,14 @@ function App() {
       });
 
       if (!response.ok) {
-        const message = `Error has ocurred:
-                             ${response.status}`;
+        const message = `Error deleting todo: ${response.status}`;
         throw new Error(message);
       }
 
       const dataResponse = await response.json();
       return dataResponse;
     } catch (error) {
-      console.log(error.message);
-      return null;
+      throw new Error(`Error deleting todo: ${error.message}`);
     }
   };
 
