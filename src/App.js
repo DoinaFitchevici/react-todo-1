@@ -12,7 +12,7 @@ function App() {
   const AIRTABLE_BASE_ID = process.env.REACT_APP_AIRTABLE_BASE_ID;
   const TABLE_NAME = process.env.REACT_APP_TABLE_NAME;
   const AIRTABLE_API_TOKEN = process.env.REACT_APP_AIRTABLE_API_TOKEN;
-  const sortByLastModifiedTime =
+  const SORT_BY_LAST_MODIFIED_TIME =
     "?sort[0][field]=completed&sort[0][direction]=asc&sort[1][field]=lastModifiedTime&sort[1][direction]=asc";
   const URL = `${API_BASE_URL}${AIRTABLE_BASE_ID}/${TABLE_NAME}`;
 
@@ -24,7 +24,7 @@ function App() {
       },
     };
 
-    const url = `${URL}${sortByLastModifiedTime}`;
+    const url = `${URL}${SORT_BY_LAST_MODIFIED_TIME}`;
 
     try {
       const response = await fetch(url, options);
@@ -68,7 +68,7 @@ function App() {
           completed: todo.completed,
         },
       };
-      const url = `${URL}/${todo.id}${sortByLastModifiedTime}`;
+      const url = `${URL}/${todo.id}${SORT_BY_LAST_MODIFIED_TIME}`;
       const response = await fetch(url, {
         method: "PATCH",
         headers: {
