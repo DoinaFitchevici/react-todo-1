@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -9,51 +9,20 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [completionMessage, setCompletionMessage] = useState("");
 
-  // const sortByLastModifiedTime =
-  //   "?sort[0][field]=completed&sort[0][direction]=asc&sort[1][field]=lastModifiedTime&sort[1][direction]=asc";
-  // const fetchData = async () => {
-  //   const options = {
-  //     method: "GET",
-  //     headers: {
-  //       Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_TOKEN}`,
-  //     },
-  //   };
-  //   const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}${sortByLastModifiedTime}`;
-
-  //   try {
-  //     const response = await fetch(url, options);
-  //     if (!response.ok) {
-  //       throw new Error(`Error: ${response.status}`);
-  //     }
-  //     const data = await response.json();
-  //     const todos = data.records.map((record) => ({
-  //       title: record.fields.title,
-  //       id: record.id,
-  //       completed: record.fields.completed,
-  //     }));
-  //     setTodoList(todos);
-  //     setIsLoading(false);
-  //   } catch (error) {
-  //     console.log("Error fetching data: ", error);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  //   // console.log(data);
-  // };
-  useEffect(() => {
-    // fetchData();
-    const fetchDataAndUpdateState = async () => {
-      try {
-        const todo = await fetchData();
-        setTodoList(todo);
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Error updating todo list: ", error);
-        setIsLoading(false);
-      }
-    };
-    fetchDataAndUpdateState();
+  const memoizedFetchData = useCallback(async () => {
+    try {
+      const todo = await fetchData();
+      setTodoList(todo);
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Error updating todo list: ", error);
+      setIsLoading(false);
+    }
   }, []);
+
+  useEffect(() => {
+    memoizedFetchData();
+  }, [memoizedFetchData]);
 
   const updateTodo = async (todo) => {
     try {
