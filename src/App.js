@@ -140,7 +140,13 @@ function App() {
     );
 
     await updateTodo(updatedTodoList.find((itemTodo) => itemTodo.id === id));
-    setTodoList(updatedTodoList);
+
+    // Reorder the list immediately when an item is marked as complete
+    const incompleteTodos = updatedTodoList.filter((todo) => !todo.completed);
+    const completeTodos = updatedTodoList.filter((todo) => todo.completed);
+    const reorderedTodoList = [...incompleteTodos, ...completeTodos];
+
+    setTodoList(reorderedTodoList);
   };
 
   return (
