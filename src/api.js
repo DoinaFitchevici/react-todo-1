@@ -17,10 +17,10 @@ const fetchData = async () => {
       throw new Error(`Error: ${response.status}`);
     }
     const data = await response.json();
-    const todos = data.records.map((record) => ({
-      id: record.id,
-      title: record.fields.title,
-      completed: record.fields.completed,
+    const todos = data.records.map(({ field: { title, completed }, id }) => ({
+      id,
+      title,
+      completed,
     }));
     return todos;
   } catch (error) {
