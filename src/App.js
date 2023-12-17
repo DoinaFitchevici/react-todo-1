@@ -2,44 +2,57 @@ import { useState, useEffect } from "react";
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { fetchData } from "api";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [completionMessage, setCompletionMessage] = useState("");
-  const sortByLastModifiedTime =
-    "?sort[0][field]=completed&sort[0][direction]=asc&sort[1][field]=lastModifiedTime&sort[1][direction]=asc";
-  const fetchData = async () => {
-    const options = {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_TOKEN}`,
-      },
-    };
-    const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}${sortByLastModifiedTime}`;
 
-    try {
-      const response = await fetch(url, options);
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
-      }
-      const data = await response.json();
-      const todos = data.records.map((record) => ({
-        title: record.fields.title,
-        id: record.id,
-        completed: record.fields.completed,
-      }));
-      setTodoList(todos);
-      setIsLoading(false);
-    } catch (error) {
-      console.log("Error fetching data: ", error);
-    } finally {
-      setIsLoading(false);
-    }
-    // console.log(data);
-  };
+  // const sortByLastModifiedTime =
+  //   "?sort[0][field]=completed&sort[0][direction]=asc&sort[1][field]=lastModifiedTime&sort[1][direction]=asc";
+  // const fetchData = async () => {
+  //   const options = {
+  //     method: "GET",
+  //     headers: {
+  //       Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_TOKEN}`,
+  //     },
+  //   };
+  //   const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}${sortByLastModifiedTime}`;
+
+  //   try {
+  //     const response = await fetch(url, options);
+  //     if (!response.ok) {
+  //       throw new Error(`Error: ${response.status}`);
+  //     }
+  //     const data = await response.json();
+  //     const todos = data.records.map((record) => ({
+  //       title: record.fields.title,
+  //       id: record.id,
+  //       completed: record.fields.completed,
+  //     }));
+  //     setTodoList(todos);
+  //     setIsLoading(false);
+  //   } catch (error) {
+  //     console.log("Error fetching data: ", error);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  //   // console.log(data);
+  // };
   useEffect(() => {
-    fetchData();
+    // fetchData();
+    const fetchDataAndUpdateState = async () => {
+      try {
+        const todo = await fetchData();
+        setTodoList(todo);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error updating todo list: ", error);
+        setIsLoading(false);
+      }
+    };
+    fetchDataAndUpdateState();
   }, []);
 
   const updateTodo = async (todo) => {
@@ -190,63 +203,3 @@ function App() {
 }
 
 export default App;
-
-// import { useState, useEffect } from "react";
-// import AddTodoForm from "./AddTodoForm";
-// import TodoList from "./TodoList";
-
-// function App() {
-//   const [todoList, setTodoList] = useState([]);
-//   const [isLoading, setIsLoading] = useState(true);
-
-//   useEffect(() => {
-//     new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         resolve({
-//           data: {
-//             todoList: JSON.parse(localStorage.getItem("savedTodoList")) || [],
-//           },
-//         });
-//       }, 2000);
-//     }).then((result) => {
-//       setTodoList(result.data.todoList);
-//       setIsLoading(false);
-//     });
-//   }, []);
-
-//   useEffect(() => {
-//     if (!isLoading) {
-//       localStorage.setItem("savedTodoList", JSON.stringify(todoList));
-//     }
-//   }, [todoList, isLoading]);
-
-//   function addTodo(newTodo) {
-//     setTodoList([...todoList, newTodo]);
-//   }
-
-//   function removeTodo(id) {
-//     setTodoList(todoList.filter((todo) => todo.id !== id));
-//   }
-//   //App.js, add the callback handler function onReorderTodo and pass it as props to TodoList component
-//   const onReorderTodo = (newTodoList) => {
-//     setTodoList(newTodoList);
-//   };
-
-//   return (
-//     <>
-//       <h1>Todo List</h1>
-//       <AddTodoForm onAddTodo={addTodo} />
-//       {isLoading ? (
-//         <p>Loading...</p>
-//       ) : (
-//         <TodoList
-//           todoList={todoList}
-//           onRemoveTodo={removeTodo}
-//           onReorderTodo={onReorderTodo}
-//         />
-//       )}
-//     </>
-//   );
-// }
-
-// export default App;
