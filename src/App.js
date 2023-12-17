@@ -11,11 +11,14 @@ function App() {
 
   const memoizedFetchData = useCallback(async () => {
     try {
+      setIsLoading(true);
       const todo = await fetchData();
       setTodoList(todo);
-      setIsLoading(false);
+      setCompletionMessage("");
     } catch (error) {
       console.error("Error updating todo list: ", error);
+      setCompletionMessage("Failed to fetch todos. Please try again.");
+    } finally {
       setIsLoading(false);
     }
   }, []);
