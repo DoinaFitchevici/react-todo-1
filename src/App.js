@@ -24,10 +24,10 @@ function App() {
       },
     };
 
-    const url = `${URL}${SORT_BY_LAST_MODIFIED_TIME}`;
+    const fetchURL = `${URL}${SORT_BY_LAST_MODIFIED_TIME}`;
 
     try {
-      const response = await fetch(url, options);
+      const response = await fetch(fetchURL, options);
       if (!response.ok) {
         throw new Error(`Error fetching data: ${response.status}`);
       }
@@ -68,8 +68,8 @@ function App() {
           completed: todo.completed,
         },
       };
-      const url = `${URL}/${todo.id}${SORT_BY_LAST_MODIFIED_TIME}`;
-      const response = await fetch(url, {
+      const updateURL = `${URL}/${todo.id}${SORT_BY_LAST_MODIFIED_TIME}`;
+      const response = await fetch(updateURL, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -92,8 +92,7 @@ function App() {
 
   const deleteTodo = async (id) => {
     try {
-      const url = `${URL}/${id}`;
-      const response = await fetch(url, {
+      const response = await fetch(`${URL}/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -115,7 +114,6 @@ function App() {
 
   const addTodo = async (newTodo) => {
     // Make a POST request to add a new todo to Airtable
-    const url = `${URL}`;
     const options = {
       method: "POST",
       headers: {
@@ -130,7 +128,7 @@ function App() {
     };
 
     try {
-      const response = await fetch(url, options);
+      const response = await fetch(URL, options);
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
       }
@@ -146,12 +144,7 @@ function App() {
           completed: false,
         },
       ]);
-
-      //   setCompletionMessage(`Todo added successfully!`);
-      //   const messageTimer = setTimeout(() => setCompletionMessage(""), 3000);
-      //   return () => clearTimeout(messageTimer);
     } catch (error) {
-      //   console.error("Error adding todo:", error);
       setCompletionMessage("Failed to add todo. Please try again.");
       const messageTimer = setTimeout(() => setCompletionMessage(""), 3000);
       return () => clearTimeout(messageTimer);
