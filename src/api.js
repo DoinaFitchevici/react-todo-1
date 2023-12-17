@@ -16,16 +16,15 @@ const fetchData = async () => {
     if (!response.ok) {
       throw new Error(`Error: ${response.status}`);
     }
-    const data = await response.json();
-    const todos = data.records.map(({ field: { title, completed }, id }) => ({
+    const { records } = await response.json();
+    const todos = records.map(({ fields: { title, completed }, id }) => ({
       id,
       title,
       completed,
     }));
     return todos;
   } catch (error) {
-    console.log("Error fetching data: ", error);
-    throw error;
+    throw new Error(`Error fetching data: ${error.message}`);
   }
 };
 
