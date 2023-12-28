@@ -10,13 +10,13 @@ function TodoListItem({ todo, onRemoveTodo, onToggleComplete }) {
   };
 
   return (
-    <li style={{ textDecoration: isChecked ? "line-through" : "none" }}>
+    <div>
       <input
         type="checkbox"
         checked={isChecked}
         onChange={handleCheckboxChange}
       />
-      {title}
+      <span style={{ color: isChecked ? "grey" : "inherit" }}>{title}</span>
       <button
         type="button"
         onClick={() => {
@@ -25,27 +25,8 @@ function TodoListItem({ todo, onRemoveTodo, onToggleComplete }) {
       >
         Remove
       </button>
-    </li>
+    </div>
   );
 }
 
 export default TodoListItem;
-
-// function TodoListItem({ todo, onRemoveTodo }) {
-//   const { title, id } = todo;
-//   return (
-//     <li>
-//       {title}
-//       <button
-//         type="button"
-//         onClick={() => {
-//           onRemoveTodo(id);
-//         }}
-//       >
-//         Remove
-//       </button>
-//     </li>
-//   );
-// }
-
-// export default TodoListItem;
