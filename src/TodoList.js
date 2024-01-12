@@ -2,6 +2,7 @@
 
 import TodoListItem from "./TodoListItem";
 import { useState } from "react";
+import style from "./TodoListItem.module.css";
 
 const TodoList = ({
   todoList,
@@ -46,6 +47,7 @@ const TodoList = ({
     <ul>
       {todoList.map(({ id, ...rest }) => (
         <li
+          className={style.ListItem}
           key={id}
           draggable
           onDragStart={(e) => handleDragStart(e, id)}
