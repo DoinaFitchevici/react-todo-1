@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./TodoListItem.module.css";
 
 function TodoListItem({ todo, onRemoveTodo, onToggleComplete }) {
   const { title, id, completed } = todo;
@@ -16,7 +17,9 @@ function TodoListItem({ todo, onRemoveTodo, onToggleComplete }) {
         checked={isChecked}
         onChange={handleCheckboxChange}
       />
-      <span style={{ color: isChecked ? "grey" : "inherit" }}>{title}</span>
+      {/* <span style={{ color: isChecked ? "grey" : "inherit" }}>{title}</span> */}
+      <span className={isChecked ? styles.completedTodo : ""}>{title}</span>
+
       <button
         type="button"
         onClick={() => {
