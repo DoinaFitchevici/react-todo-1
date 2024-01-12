@@ -110,14 +110,21 @@ function App() {
         options
       );
 
-      setTodoList((prevTodoList) => [
-        ...prevTodoList,
-        {
-          id: response.data.id,
-          title: response.data.fields.title,
-          completed: false,
-        },
-      ]);
+      // Insert the new todo at the correct position in the list
+      setTodoList((prevTodoList) => {
+        const incompleteTodos = prevTodoList.filter((todo) => !todo.completed);
+        const completeTodos = prevTodoList.filter((todo) => todo.completed);
+
+        return [
+          ...incompleteTodos,
+          {
+            id: response.data.id,
+            title: response.data.fields.title,
+            completed: false,
+          },
+          ...completeTodos,
+        ];
+      });
     } catch (error) {
       setCompletionMessage("Failed to add todo. Please try again.");
       const messageTimer = setTimeout(() => setCompletionMessage(""), 3000);
