@@ -14,6 +14,7 @@ function TodoListItem({ todo, onRemoveTodo, onToggleComplete }) {
     <div>
       <input
         type="checkbox"
+        className={styles.customCheckbox}
         checked={isChecked}
         onChange={handleCheckboxChange}
       />
@@ -22,6 +23,7 @@ function TodoListItem({ todo, onRemoveTodo, onToggleComplete }) {
 
       <button
         type="button"
+        className={styles.button}
         onClick={() => {
           onRemoveTodo(id);
         }}

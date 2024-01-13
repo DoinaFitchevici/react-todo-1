@@ -1,13 +1,126 @@
-.ListItem {
-    color: black;
-}
-
 body {
     background-color: #f4f2ee;
     color: black;
+    font-weight: 200;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: .5rem;
+}
+
+.ListItem {
+    color: black;
+    margin: .5rem;
+}
+
+div {
+    margin: 5px;
+}
+
+div button {
+    margin-inline: 5px;
+    cursor: pointer;
 }
 
 .completedTodo {
     color: grey;
+}
+
+.customCheckbox {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.customCheckbox:checked {
+    background-color: lightgray;
+}
+
+.noBulletPoints {
+    list-style: none;
+    padding: 0;
+}
+
+.draggableItem {
+    cursor: grab;
+}
+
+.dragging {
+    cursor: grabbing;
+}
+
+h1 {
+    font-weight: 100;
+    font-variant: small-caps;
+}
+
+.button {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #4d5353;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember", sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100px;
+}
+
+.button:hover {
+    background-color: #f7fafa;
+}
+
+.button:focus {
+    border-color: #6790bb;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    outline: 0;
+}
+
+input {
+    padding: 0 5px 0 5px;
+    margin: 5px;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    font-size: 13px;
+    line-height: 29px;
+    vertical-align: middle;
+}
+
+/* Small devices (mobile, 600px and up) */
+@media (min-width: 600px) {
+
+    body {
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+    body {
+        padding: 30px;
+        font-size: 18px;
+
+    }
 }

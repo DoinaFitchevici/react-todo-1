@@ -44,13 +44,19 @@ const TodoList = ({
   };
 
   return (
-    <ul>
+    <ul className={style.noBulletPoints}>
       {todoList.map(({ id, ...rest }) => (
         <li
-          className={style.ListItem}
+          className={`${style.ListItem} ${style.draggableItem}`}
           key={id}
           draggable
-          onDragStart={(e) => handleDragStart(e, id)}
+          onDragStart={(e) => {
+            handleDragStart(e, id);
+            e.currentTarget.classList.add(style.dragging);
+          }}
+          onDragEnd={(e) => {
+            e.currentTarget.classList.remove(style.dragging);
+          }}
           onDragOver={(e) => handleDragOver(e)}
           onDrop={(e) => handleDrop(e, id)}
         >

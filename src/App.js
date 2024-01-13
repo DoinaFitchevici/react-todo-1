@@ -163,7 +163,7 @@ function App() {
         <Route
           path="/"
           element={
-            <>
+            <section>
               <h1>Todo List</h1>
               <AddTodoForm onAddTodo={addTodo} />
               {completionMessage && <p>{completionMessage}</p>}
@@ -177,7 +177,7 @@ function App() {
                   onToggleComplete={onToggleComplete}
                 />
               )}
-            </>
+            </section>
           }
         />
         <Route path="/new" element={<h1>New Todo List</h1>} />
