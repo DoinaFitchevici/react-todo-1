@@ -9,6 +9,7 @@ const TodoList = ({
   onRemoveTodo,
   onReorderTodo,
   onToggleComplete,
+  onEditTodo,
 }) => {
   const [draggedTodoId, setDraggedTodoId] = useState(null);
 
@@ -64,6 +65,7 @@ const TodoList = ({
             todo={{ id, ...rest }}
             onRemoveTodo={onRemoveTodo}
             onToggleComplete={onToggleComplete}
+            onEditTodo={onEditTodo}
           />
         </li>
       ))}

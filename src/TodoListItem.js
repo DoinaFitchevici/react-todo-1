@@ -1,9 +1,18 @@
 import { useState } from "react";
 import styles from "./TodoListItem.module.css";
 
-function TodoListItem({ todo, onRemoveTodo, onToggleComplete }) {
+function TodoListItem({ todo, onRemoveTodo, onToggleComplete, onEditTodo }) {
   const { title, id, completed } = todo;
   const [isChecked, setIsChecked] = useState(completed);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedTitle, setEditedTitle] = useState(title);
+
+  const handleEdit = () => {
+    if (isEditing) {
+      onEditTodo(id, editedTitle);
+    }
+    setIsEditing(!isEditing);
+  };
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -12,6 +21,7 @@ function TodoListItem({ todo, onRemoveTodo, onToggleComplete }) {
 
   return (
     <div className={styles.container}>
+      {/* checkbox */}
       <div className={styles.column}>
         <input
           type="checkbox"
@@ -22,15 +32,20 @@ function TodoListItem({ todo, onRemoveTodo, onToggleComplete }) {
       </div>
       {/* <span style={{ color: isChecked ? "grey" : "inherit" }}>{title}</span> */}
       <div className={styles.column}>
-        <span className={isChecked ? styles.completedTodo : ""}>{title}</span>
+        {isEditing ? (
+          <input
+            type="text"
+            className={styles.input}
+            value={editedTitle}
+            onChange={(e) => setEditedTitle(e.target.value)}
+          />
+        ) : (
+          <span className={isChecked ? styles.completedTodo : ""}>{title}</span>
+        )}
       </div>
       {/* Edit Button */}
       <div className={styles.column}>
-        <button
-          type="button"
-          className={styles.button}
-          // onClick={() => onEditTodo(id)}
-        >
+        <button type="button" className={styles.button} onClick={handleEdit}>
           <div className={styles.buttonIcon}>
             {
               <svg

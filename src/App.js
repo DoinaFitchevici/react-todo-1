@@ -157,6 +157,31 @@ function App() {
     setTodoList(reorderedTodoList);
   };
 
+  const editTodo = async (id, newTitle) => {
+    try {
+      const airtableData = {
+        fields: {
+          title: newTitle,
+        },
+      };
+      const updateURL = `${URL}/${id}`;
+      await axios.patch(updateURL, airtableData, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
+        },
+      });
+
+      setTodoList((prevList) =>
+        prevList.map((todo) =>
+          todo.id === id ? { ...todo, title: newTitle } : todo
+        )
+      );
+    } catch (error) {
+      console.error("Error updating todo", error);
+    }
+  };
+
   return (
     <BrowserRouter>
       <Routes>
@@ -175,6 +200,7 @@ function App() {
                   onRemoveTodo={removeTodo}
                   onReorderTodo={onReorderTodo}
                   onToggleComplete={onToggleComplete}
+                  onEditTodo={editTodo}
                 />
               )}
             </section>
