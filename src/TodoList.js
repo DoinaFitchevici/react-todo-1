@@ -2,12 +2,14 @@
 
 import TodoListItem from "./TodoListItem";
 import { useState } from "react";
+import style from "./TodoListItem.module.css";
 
 const TodoList = ({
   todoList,
   onRemoveTodo,
   onReorderTodo,
   onToggleComplete,
+  onEditTodo,
 }) => {
   const [draggedTodoId, setDraggedTodoId] = useState(null);
 
@@ -43,12 +45,19 @@ const TodoList = ({
   };
 
   return (
-    <ul>
+    <ul className={style.noBulletPoints}>
       {todoList.map(({ id, ...rest }) => (
         <li
+          className={`${style.ListItem} ${style.draggableItem}`}
           key={id}
           draggable
-          onDragStart={(e) => handleDragStart(e, id)}
+          onDragStart={(e) => {
+            handleDragStart(e, id);
+            e.currentTarget.classList.add(style.dragging);
+          }}
+          onDragEnd={(e) => {
+            e.currentTarget.classList.remove(style.dragging);
+          }}
           onDragOver={(e) => handleDragOver(e)}
           onDrop={(e) => handleDrop(e, id)}
         >
@@ -56,6 +65,7 @@ const TodoList = ({
             todo={{ id, ...rest }}
             onRemoveTodo={onRemoveTodo}
             onToggleComplete={onToggleComplete}
+            onEditTodo={onEditTodo}
           />
         </li>
       ))}

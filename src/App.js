@@ -3,6 +3,7 @@ import axios from "axios";
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import "./TodoListItem.module.css";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
@@ -156,13 +157,38 @@ function App() {
     setTodoList(reorderedTodoList);
   };
 
+  const editTodo = async (id, newTitle) => {
+    try {
+      const airtableData = {
+        fields: {
+          title: newTitle,
+        },
+      };
+      const updateURL = `${URL}/${id}`;
+      await axios.patch(updateURL, airtableData, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
+        },
+      });
+
+      setTodoList((prevList) =>
+        prevList.map((todo) =>
+          todo.id === id ? { ...todo, title: newTitle } : todo
+        )
+      );
+    } catch (error) {
+      console.error("Error updating todo", error);
+    }
+  };
+
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/"
           element={
-            <>
+            <section>
               <h1>Todo List</h1>
               <AddTodoForm onAddTodo={addTodo} />
               {completionMessage && <p>{completionMessage}</p>}
@@ -174,9 +200,10 @@ function App() {
                   onRemoveTodo={removeTodo}
                   onReorderTodo={onReorderTodo}
                   onToggleComplete={onToggleComplete}
+                  onEditTodo={editTodo}
                 />
               )}
-            </>
+            </section>
           }
         />
         <Route path="/new" element={<h1>New Todo List</h1>} />
