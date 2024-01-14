@@ -5,13 +5,19 @@ function TodoListItem({ todo, onRemoveTodo, onToggleComplete, onEditTodo }) {
   const { title, id, completed } = todo;
   const [isChecked, setIsChecked] = useState(completed);
   const [isEditing, setIsEditing] = useState(false);
-  const [editedTitle, setEditedTitle] = useState(title);
+  const [editedTitle, setEditedTitle] = useState(todo.title);
 
   const handleEdit = () => {
     if (isEditing) {
       onEditTodo(id, editedTitle);
     }
     setIsEditing(!isEditing);
+  };
+
+  const handleEditSubmit = (event) => {
+    event.preventDefault(); // Prevent the default form submission
+    onEditTodo(todo.id, editedTitle);
+    setIsEditing(false); // Exit editing mode
   };
 
   const handleCheckboxChange = () => {
@@ -33,12 +39,15 @@ function TodoListItem({ todo, onRemoveTodo, onToggleComplete, onEditTodo }) {
       {/* <span style={{ color: isChecked ? "grey" : "inherit" }}>{title}</span> */}
       <div className={styles.column}>
         {isEditing ? (
-          <input
-            type="text"
-            className={styles.input}
-            value={editedTitle}
-            onChange={(e) => setEditedTitle(e.target.value)}
-          />
+          <form onSubmit={handleEditSubmit}>
+            <input
+              type="text"
+              className={styles.input}
+              value={editedTitle}
+              onChange={(e) => setEditedTitle(e.target.value)}
+              autoFocus
+            />
+          </form>
         ) : (
           <span className={isChecked ? styles.completedTodo : ""}>{title}</span>
         )}
