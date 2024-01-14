@@ -140,20 +140,25 @@ input {
     justify-content: center;
 }
 
-.svgIcon {
+.editSvgIcon {
     width: 16px;
     height: 16px;
     fill: #4d5353;
 }
 
-.buttonIcon:hover .svgIcon {
-    /* background-color: #fee2e2; */
-    fill: #fe5771;
+.buttonIcon:hover .editSvgIcon {
+    fill: #6790bb;
 }
 
-.buttonIcon:focus .svgIcon {
-    fill: #6790bb;
-    /* Change color on focus */
+.removeSvgIcon {
+    width: 16px;
+    height: 16px;
+    fill: #4d5353;
+}
+
+.buttonIcon:hover .removeSvgIcon {
+    /* background-color: #fee2e2; */
+    fill: #fe5771;
 }
 
 section {

@@ -24,6 +24,31 @@ function TodoListItem({ todo, onRemoveTodo, onToggleComplete }) {
       <div className={styles.column}>
         <span className={isChecked ? styles.completedTodo : ""}>{title}</span>
       </div>
+      {/* Edit Button */}
+      <div className={styles.column}>
+        <button
+          type="button"
+          className={styles.button}
+          // onClick={() => onEditTodo(id)}
+        >
+          <div className={styles.buttonIcon}>
+            {
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className={styles.editSvgIcon}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"
+                />
+              </svg>
+            }
+          </div>
+        </button>
+      </div>
+      {/* Remove Button */}
       <div className={styles.column}>
         <button
           type="button"
@@ -32,12 +57,11 @@ function TodoListItem({ todo, onRemoveTodo, onToggleComplete }) {
             onRemoveTodo(id);
           }}
         >
-          {/* Remove */}
           <div className={styles.buttonIcon}>
             {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={styles.svgIcon}
+                className={styles.removeSvgIcon}
                 viewBox="0 0 24 24"
               >
                 <path
