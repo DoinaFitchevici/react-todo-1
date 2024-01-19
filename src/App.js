@@ -1,14 +1,16 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useContext } from "react";
 import axios from "axios";
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { TodoCounterContext } from "./context/todoCounterContext";
 // import "./TodoListItem.module.css";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [completionMessage, setCompletionMessage] = useState("");
+  const { count, setCount } = useContext(TodoCounterContext);
 
   const API_BASE_URL = "https://api.airtable.com/v0/";
   const AIRTABLE_BASE_ID = process.env.REACT_APP_AIRTABLE_BASE_ID;
@@ -59,6 +61,10 @@ function App() {
   useEffect(() => {
     memoizedFetchData();
   }, [memoizedFetchData]);
+
+  useEffect(() => {
+    setCount(todoList.length);
+  }, [todoList]);
 
   const updateTodo = async (todo) => {
     try {
@@ -195,13 +201,16 @@ function App() {
               {isLoading ? (
                 <p>Loading...</p>
               ) : (
-                <TodoList
-                  todoList={todoList}
-                  onRemoveTodo={removeTodo}
-                  onReorderTodo={onReorderTodo}
-                  onToggleComplete={onToggleComplete}
-                  onEditTodo={editTodo}
-                />
+                <>
+                  <span>Item Counts: {count}</span>
+                  <TodoList
+                    todoList={todoList}
+                    onRemoveTodo={removeTodo}
+                    onReorderTodo={onReorderTodo}
+                    onToggleComplete={onToggleComplete}
+                    onEditTodo={editTodo}
+                  />
+                </>
               )}
             </section>
           }
