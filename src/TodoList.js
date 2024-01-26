@@ -3,6 +3,7 @@
 import TodoListItem from "./TodoListItem";
 import { useState } from "react";
 import style from "./TodoListItem.module.css";
+import PropTypes from "prop-types";
 
 const TodoList = ({
   todoList,
@@ -71,6 +72,20 @@ const TodoList = ({
       ))}
     </ul>
   );
+};
+
+TodoList.propTypes = {
+  todoList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      title: PropTypes.string.isRequired,
+      completed: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
+  onRemoveTodo: PropTypes.func.isRequired,
+  onReorderTodo: PropTypes.func.isRequired,
+  onToggleComplete: PropTypes.func.isRequired,
+  onEditTodo: PropTypes.func.isRequired,
 };
 
 export default TodoList;

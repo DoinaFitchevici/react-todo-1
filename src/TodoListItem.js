@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./TodoListItem.module.css";
+import PropTypes from "prop-types";
 
 function TodoListItem({ todo, onRemoveTodo, onToggleComplete, onEditTodo }) {
   const { title, id, completed } = todo;
@@ -101,5 +102,16 @@ function TodoListItem({ todo, onRemoveTodo, onToggleComplete, onEditTodo }) {
     </div>
   );
 }
+
+TodoListItem.propTypes = {
+  todo: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    title: PropTypes.string.isRequired,
+    completed: PropTypes.bool.isRequired,
+  }).isRequired,
+  onRemoveTodo: PropTypes.func.isRequired,
+  onToggleComplete: PropTypes.func.isRequired,
+  onEditTodo: PropTypes.func.isRequired,
+};
 
 export default TodoListItem;
