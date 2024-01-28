@@ -4,6 +4,7 @@ import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { TodoCounterContext } from "./context/todoCounterContext";
+import { Navigate } from "react-router-dom";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
@@ -204,8 +205,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Navigate replace to="/landing" />} />
+        <Route path="/landing" element={<h1>New Todo List</h1>} />
         <Route
-          path="/"
+          path="/TodoList"
           element={
             <section>
               <h1>Todo List</h1>
@@ -228,7 +231,6 @@ function App() {
             </section>
           }
         />
-        <Route path="/new" element={<h1>New Todo List</h1>} />
       </Routes>
     </BrowserRouter>
   );
