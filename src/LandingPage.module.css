@@ -1,0 +1,63 @@
+/* LandingPage.css */
+.landingPage {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: #333;
+}
+
+.main {
+    margin: 40px 15%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.main p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #666;
+}
+
+.ctaButton {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4c9daf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.ctaButton:hover {
+    background-color: #9da7af;
+}
+
+/* LandingPage.css */
+.footer {
+    background-color: #2a2a2a;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    /* Ensures padding doesn't affect the overall width */
+}
+
+
+.footer p {
+    margin: 0;
+    font-size: 1em;
+}
