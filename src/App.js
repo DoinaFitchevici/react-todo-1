@@ -207,7 +207,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route
-          path="/home"
+          path="/todolist"
           element={
             <section>
               <h1>Todo List</h1>

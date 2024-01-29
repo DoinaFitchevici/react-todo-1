@@ -7,7 +7,7 @@ const LandingPage = () => {
       <main className={styles.main}>
         <h2>Keep Your Tasks Organized</h2>
         <p>Manage your daily tasks efficiently.</p>
-        <Link to="/home" className={styles.ctaButton}>
+        <Link to="/todolist" className={styles.ctaButton}>
           Go to Todo List
         </Link>
       </main>
