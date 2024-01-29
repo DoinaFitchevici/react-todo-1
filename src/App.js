@@ -1,10 +1,10 @@
-import { useState, useEffect, useCallback, useContext } from "react";
 import axios from "axios";
-import AddTodoForm from "./AddTodoForm";
-import TodoList from "./TodoList";
+import { useState, useEffect, useCallback, useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { TodoCounterContext } from "./context/todoCounterContext";
-import LandingPage from "./LandingPage";
+import AddTodoForm from "./components/AddTodoForm";
+import TodoList from "./components/TodoList";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
