@@ -1,16 +1,18 @@
-import { useState, useEffect, useCallback, useContext } from "react";
 import axios from "axios";
-import AddTodoForm from "./AddTodoForm";
-import TodoList from "./TodoList";
+import { useState, useEffect, useCallback, useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { TodoCounterContext } from "./context/todoCounterContext";
-// import "./TodoListItem.module.css";
+import AddTodoForm from "./components/AddTodoForm";
+import TodoList from "./components/TodoList";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [completionMessage, setCompletionMessage] = useState("");
   const { count, setCount } = useContext(TodoCounterContext);
+  const [completionMessage, setCompletionMessage] = useState("");
+  const [completionMessageTimeout, setCompletionMessageTimeout] =
+    useState(null);
 
   const API_BASE_URL = "https://api.airtable.com/v0/";
   const AIRTABLE_BASE_ID = process.env.REACT_APP_AIRTABLE_BASE_ID;
@@ -132,12 +134,24 @@ function App() {
           ...completeTodos,
         ];
       });
+
+      // setCompletionMessage("Todo added successfully");
+      const messageTimer = setTimeout(() => setCompletionMessage(""), 3000);
+      setCompletionMessageTimeout(messageTimer); // Store the timeout ID
     } catch (error) {
       setCompletionMessage("Failed to add todo. Please try again.");
       const messageTimer = setTimeout(() => setCompletionMessage(""), 3000);
       return () => clearTimeout(messageTimer);
     }
   };
+  useEffect(() => {
+    // Cleanup function
+    return () => {
+      if (completionMessageTimeout) {
+        clearTimeout(completionMessageTimeout); // Clear the timeout
+      }
+    };
+  }, [completionMessageTimeout]); // Dependency array
 
   const removeTodo = async (id) => {
     await deleteTodo(id);
@@ -191,8 +205,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<LandingPage />} />
         <Route
-          path="/"
+          path="/todolist"
           element={
             <section>
               <h1>Todo List</h1>
