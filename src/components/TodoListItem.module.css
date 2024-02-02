@@ -116,7 +116,10 @@ input {
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.container:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 2px 24px;
 }
 
 .container .column:first-child,
