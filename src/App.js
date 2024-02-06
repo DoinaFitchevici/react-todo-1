@@ -1,7 +1,3 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
-import TodoContainer from "./components/TodoContainer";
-
 function App() {
   return (
     <BrowserRouter>
