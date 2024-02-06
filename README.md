@@ -16,6 +16,8 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](./LICENSE)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/AmirhosseinOlyaei?color=darkgreen)](https://github.com/sponsors/AmirhosseinOlyaei)
 
+![Todo list snapshot](./public/Todo-Screenshot.png)
+
 This is a Todo List application built using React.js.
 
 - It allows you to add tasks, mark them as completed
@@ -30,6 +32,8 @@ This is a Todo List application built using React.js.
 - [Usage](#usage)
 - [User Manual](#user-manual)
 - [Additional Resources](#additional-resources)
+- [Acknowledgments](#Acknowledgments)
+- [Contact](#contact)
 - [Author](#author)
 - [License](#license)
 
@@ -123,11 +127,25 @@ The application will open in your default web browser at http://localhost:3000. 
 
 - [React](https://react.dev/)
 - [Chakra UI](https://chakra-ui.com/)
+- [DaisyUI](https://daisyui.com/)
 - [Learn React](https://scrimba.com/learn/learnreact)
+- [Code with Mosh](https://codewithmosh.com/)
 - [Epic React](https://epicreact.dev/modules/react-hooks/react-hooks-welcome)
 - [Beautiful DND](https://github.com/atlassian/react-beautiful-dnd)
 - [Markdown](https://www.markdownguide.org/)
 - [Code The Dream organization](https://codethedream.org/)
+
+## Acknowledgments
+
+Special thanks and a shout out to the following individuals and organizations:
+
+- [Code the Dream](https://www.codethedream.org/) for their exceptional coding school, providing valuable learning resources and support.
+- [FontAwesome](https://fontawesome.com/) for the icons used in this project.
+- Hat tip to anyone whose code was used.
+
+## Contact
+
+If you have any questions or feedback, feel free to reach out to [DevArts](https://devarts.notion.site/devarts/61c6b79808ce476290c753165851b070?v=9d442848a814451fba7a2e1b99bebb9b).
 
 <a id="author"></a>
 
