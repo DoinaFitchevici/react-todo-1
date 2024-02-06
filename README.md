@@ -16,7 +16,6 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](./LICENSE)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/AmirhosseinOlyaei?color=darkgreen)](https://github.com/sponsors/AmirhosseinOlyaei)
 
-
 ![Todo list snapshot](./public/Todo-Screenshot.png)
 
 This is a Todo List application built using React.js.
