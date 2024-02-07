@@ -12,17 +12,24 @@ const LandingPage = () => {
         </Link>
       </main>
       <main className={styles.main}>
-        <h2>Create AI List</h2>
-        <p>Text generation models</p>
+        <h2>Create List with AI</h2>
+        <p>Spark Ideas with text generation models</p>
         <Link to="/generate-tasks" className={styles.ctaButton}>
           Generate Tasks
         </Link>
       </main>
       <main className={styles.main}>
-        <h2>Create Chat Completion</h2>
+        <h2>AI-Powered Chat Assistant</h2>
         <p>
-          Given a list of messages comprising a conversation, the model will
-          return a response.
+          Engage with our AI-Powered Chat Assistant, designed to understand your
+          queries and provide responses using advanced text generation models.
+          This feature allows you to interact in a conversational manner,
+          getting assistance, generating task lists, and finding information
+          within the application. Whether you need help organizing your tasks,
+          looking for suggestions, or just want to explore AI capabilities, our
+          chat assistant is here to enhance your productivity and make your
+          experience more interactive. Simply type your message and let our AI
+          do the rest, offering you insights and support in real-time.
         </p>
         <Link to="/chat" className={styles.ctaButton}>
           Chat with AI

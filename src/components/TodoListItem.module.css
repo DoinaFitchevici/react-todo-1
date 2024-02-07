@@ -110,6 +110,21 @@ input {
     font-size: 13px;
     line-height: 29px;
     vertical-align: middle;
+    flex-grow: 1;
+    /* Allow input to grow and fill available space */
+    margin-right: 8px;
+    /* Provide some space between input and button */
+
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Adjust if necessary */
+    padding: 0;
+    width: 100%;
+    /* Ensure container uses full width */
 }
 
 .container {
