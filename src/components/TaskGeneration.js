@@ -46,17 +46,9 @@ const TaskGeneration = () => {
   // Render a button to trigger task generation and display the generated tasks
   return (
     <div>
-      <button onClick={generateTasks}>Generate Tasks</button>
-      <ul>
-        {generatedTasks.map((task, index) => (
-          <li key={index}>
-            {task}{" "}
-            <button onClick={() => addToDo(task)} className={styles.button}>
-              Add to todo list
-            </button>
-          </li>
-        ))}
-      </ul>
+      <button onClick={generateTasks} className={styles.button}>
+        Generate Tasks
+      </button>
     </div>
   );
 };
