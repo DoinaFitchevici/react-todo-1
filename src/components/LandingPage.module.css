@@ -49,7 +49,7 @@
     text-align: center;
     padding: 10px 0;
     position: absolute;
-    bottom: 0;
+    /* bottom: 0; */
     left: 0;
     width: 100vw;
     box-sizing: border-box;
@@ -60,4 +60,17 @@
 .footer p {
     margin: 0;
     font-size: 1em;
+}
+
+/* Remove the default underline and change color */
+a {
+    text-decoration: none;
+    color: #9fabc5;
+    /* You can use any color you prefer */
+}
+
+/* Change color on hover */
+a:hover {
+    color: #8b6f6f;
+    /* Change to a different color on hover */
 }
