@@ -96,6 +96,11 @@ h1 {
     outline: 0;
 }
 
+.buttonWithMargin {
+    padding-inline: 15px;
+    margin: 20px;
+}
+
 input {
     padding: 0 5px 0 5px;
     margin: 5px;
@@ -174,6 +179,11 @@ section {
 
 }
 
+.positionRelative {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 /* Small devices (mobile, 600px and down) */
 @media (max-width: 600px) {

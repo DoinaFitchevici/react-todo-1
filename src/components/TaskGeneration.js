@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import styles from "./TodoListItem.module.css";
 
 const TaskGeneration = () => {
@@ -46,6 +47,11 @@ const TaskGeneration = () => {
   // Render a button to trigger task generation and display the generated tasks
   return (
     <div>
+      <div className={styles.positionRelative}>
+        <Link to="/" className={`${styles.button} ${styles.buttonWithMargin}`}>
+          Home
+        </Link>
+      </div>
       <button onClick={generateTasks} className={styles.button}>
         Generate Tasks
       </button>
