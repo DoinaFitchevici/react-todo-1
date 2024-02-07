@@ -68,7 +68,6 @@ const Chat = () => {
       </div>
       <div className={styles.inputContainer}>
         <input
-          className={styles.input}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Type your message here..."

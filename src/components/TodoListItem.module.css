@@ -187,7 +187,8 @@ input {
 section {
     display: flex;
     flex-direction: column;
-    width: 40rem;
+    min-width: 30rem;
+    max-width: 50rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     padding: 1rem;
     background-color: white;
@@ -223,5 +224,9 @@ section {
         box-shadow: none;
         margin: 0;
         padding: 0;
+    }
+
+    h1 {
+        text-align: center;
     }
 }
