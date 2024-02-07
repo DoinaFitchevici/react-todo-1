@@ -96,6 +96,11 @@ h1 {
     outline: 0;
 }
 
+.buttonWithMargin {
+    padding-inline: 15px;
+    margin: 20px;
+}
+
 input {
     padding: 0 5px 0 5px;
     margin: 5px;
@@ -105,6 +110,21 @@ input {
     font-size: 13px;
     line-height: 29px;
     vertical-align: middle;
+    flex-grow: 1;
+    /* Allow input to grow and fill available space */
+    margin-right: 8px;
+    /* Provide some space between input and button */
+
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Adjust if necessary */
+    padding: 0;
+    width: 100%;
+    /* Ensure container uses full width */
 }
 
 .container {
@@ -167,13 +187,19 @@ input {
 section {
     display: flex;
     flex-direction: column;
-    width: 40rem;
+    min-width: 30rem;
+    max-width: 50rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     padding: 1rem;
     background-color: white;
 
 }
 
+.positionRelative {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 /* Small devices (mobile, 600px and down) */
 @media (max-width: 600px) {
@@ -198,5 +224,9 @@ section {
         box-shadow: none;
         margin: 0;
         padding: 0;
+    }
+
+    h1 {
+        text-align: center;
     }
 }

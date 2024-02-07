@@ -22,7 +22,7 @@ function AddTodoForm({ onAddTodo }) {
   }
 
   return (
-    <form onSubmit={handleAddTodo}>
+    <form onSubmit={handleAddTodo} className={styles.inputContainer}>
       <InputWithLabel
         type="text"
         id="todoTitle"

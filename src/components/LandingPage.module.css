@@ -29,7 +29,8 @@
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #4c9daf;
+    /* background-color: #4c9daf; */
+    background-color: #7095e5;
     color: white;
     border: none;
     border-radius: 5px;
@@ -49,15 +50,24 @@
     text-align: center;
     padding: 10px 0;
     position: absolute;
-    bottom: 0;
+    /* bottom: 0; */
     left: 0;
     width: 100vw;
     box-sizing: border-box;
-    /* Ensures padding doesn't affect the overall width */
 }
 
 
 .footer p {
     margin: 0;
     font-size: 1em;
+}
+
+/* Remove the default underline and change color */
+a {
+    text-decoration: none;
+    color: #9fabc5;
+}
+
+.footer a:hover {
+    color: #8b6f6f;
 }
