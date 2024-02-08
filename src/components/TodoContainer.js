@@ -19,9 +19,12 @@ function TodoContainer() {
   const SORT_BY_LAST_MODIFIED_TIME =
     "?sort[0][field]=completed&sort[0][direction]=asc&sort[1][field]=lastModifiedTime&sort[1][direction]=asc";
   const URL = `${API_BASE_URL}${AIRTABLE_BASE_ID}/${TABLE_NAME}`;
+  // const SORT_BY_TITLE = "?sort[0][field]=Title&sort[0][direction]=asc";
 
   const fetchData = async () => {
     const fetchURL = `${URL}${SORT_BY_LAST_MODIFIED_TIME}`;
+    // const fetchURL = `${URL}${SORT_BY_TITLE}`;
+    // const fetchURL = `${URL}${SORT_BY_LAST_MODIFIED_TIME}&view=Grid%20view`;
 
     try {
       const response = await axios.get(fetchURL, {
@@ -37,6 +40,8 @@ function TodoContainer() {
           completed,
         })
       );
+      // .sort((a, b) => a.title.localeCompare(b.title)); // For ascending order
+      // .sort((a, b) => b.title.localeCompare(a.title)); // For descending order
 
       return todos;
     } catch (error) {
@@ -121,6 +126,8 @@ function TodoContainer() {
       setTodoList((prevTodoList) => {
         const incompleteTodos = prevTodoList.filter((todo) => !todo.completed);
         const completeTodos = prevTodoList.filter((todo) => todo.completed);
+        // const updatedTodoList = [...prevTodoList, newTodoObject];
+        // return updatedTodoList.sort((a, b) => a.title.localeCompare(b.title));
 
         return [
           ...incompleteTodos,
