@@ -3,10 +3,12 @@ import LandingPage from "./components/LandingPage";
 import TodoContainer from "./components/TodoContainer";
 import TaskGeneration from "./components/TaskGeneration";
 import Chat from "./components/Chat";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/todolist" element={<TodoContainer />} />

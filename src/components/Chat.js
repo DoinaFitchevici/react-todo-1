@@ -1,8 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import styles from "./TodoListItem.module.css";
-import style from "./Chat.module.css";
 import ReactMarkdown from "react-markdown";
 
 const Chat = () => {
@@ -45,11 +43,6 @@ const Chat = () => {
 
   return (
     <section className={styles.section}>
-      <div className={styles.positionRelative}>
-        <Link to="/" className={`${styles.button} ${styles.buttonWithMargin}`}>
-          Home
-        </Link>
-      </div>
       <div className={`${styles.container} ${styles.noBulletPoints}`}>
         {response.map((res, index) => (
           <div

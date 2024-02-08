@@ -3,8 +3,6 @@ import { useState, useEffect, useCallback, useContext } from "react";
 import { TodoCounterContext } from "../context/todoCounterContext";
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
-import styles from "./TodoListItem.module.css";
-import { Link } from "react-router-dom";
 
 function TodoContainer() {
   const [todoList, setTodoList] = useState([]);
@@ -203,33 +201,25 @@ function TodoContainer() {
   };
 
   return (
-    <>
-      <div className={styles.positionRelative}>
-        <Link to="/" className={`${styles.button} ${styles.buttonWithMargin}`}>
-          Home
-        </Link>
-      </div>
-
-      <section>
-        <h1>Todo List</h1>
-        <AddTodoForm onAddTodo={addTodo} />
-        {completionMessage && <p>{completionMessage}</p>}
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          <>
-            <span>Item Counts: {count}</span>
-            <TodoList
-              todoList={todoList}
-              onRemoveTodo={removeTodo}
-              onReorderTodo={onReorderTodo}
-              onToggleComplete={onToggleComplete}
-              onEditTodo={editTodo}
-            />
-          </>
-        )}
-      </section>
-    </>
+    <section>
+      <h1>Todo List</h1>
+      <AddTodoForm onAddTodo={addTodo} />
+      {completionMessage && <p>{completionMessage}</p>}
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          <span>Item Counts: {count}</span>
+          <TodoList
+            todoList={todoList}
+            onRemoveTodo={removeTodo}
+            onReorderTodo={onReorderTodo}
+            onToggleComplete={onToggleComplete}
+            onEditTodo={editTodo}
+          />
+        </>
+      )}
+    </section>
   );
 }
 
