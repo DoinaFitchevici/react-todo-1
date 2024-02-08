@@ -12,26 +12,27 @@ function TodoContainer() {
   const [completionMessageTimeout, setCompletionMessageTimeout] =
     useState(null);
 
-  const API_BASE_URL = "https://api.airtable.com/v0/";
-  const AIRTABLE_BASE_ID = process.env.REACT_APP_AIRTABLE_BASE_ID;
-  const TABLE_NAME = process.env.REACT_APP_TABLE_NAME;
-  const AIRTABLE_API_TOKEN = process.env.REACT_APP_AIRTABLE_API_TOKEN;
-  const SORT_BY_LAST_MODIFIED_TIME =
-    "?sort[0][field]=completed&sort[0][direction]=asc&sort[1][field]=lastModifiedTime&sort[1][direction]=asc";
-  const URL = `${API_BASE_URL}${AIRTABLE_BASE_ID}/${TABLE_NAME}`;
+  // const API_BASE_URL = "https://api.airtable.com/v0/";
+  // const AIRTABLE_BASE_ID = process.env.REACT_APP_AIRTABLE_BASE_ID;
+  // const TABLE_NAME = process.env.REACT_APP_TABLE_NAME;
+  // const AIRTABLE_API_TOKEN = process.env.REACT_APP_AIRTABLE_API_TOKEN;
+  // const SORT_BY_LAST_MODIFIED_TIME =
+  //   "?sort[0][field]=completed&sort[0][direction]=asc&sort[1][field]=lastModifiedTime&sort[1][direction]=asc";
+  // const URL = `${API_BASE_URL}${AIRTABLE_BASE_ID}/${TABLE_NAME}`;
   // const SORT_BY_TITLE = "?sort[0][field]=Title&sort[0][direction]=asc";
 
   const fetchData = async () => {
-    const fetchURL = `${URL}${SORT_BY_LAST_MODIFIED_TIME}`;
+    // const fetchURL = `${URL}${SORT_BY_LAST_MODIFIED_TIME}`;
     // const fetchURL = `${URL}${SORT_BY_TITLE}`;
     // const fetchURL = `${URL}${SORT_BY_LAST_MODIFIED_TIME}&view=Grid%20view`;
 
     try {
-      const response = await axios.get(fetchURL, {
-        headers: {
-          Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
-        },
-      });
+      // const response = await axios.get(fetchURL, {
+      //   headers: {
+      //     Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
+      //   },
+      // });
+      const response = await axios.get("/api/todos"); // Pointing to Node.js server's endpoint
 
       const todos = response.data.records.map(
         ({ fields: { title, completed }, id }) => ({
@@ -78,11 +79,13 @@ function TodoContainer() {
           completed: todo.completed,
         },
       };
-      const updateURL = `${URL}/${todo.id}${SORT_BY_LAST_MODIFIED_TIME}`;
+      // const updateURL = `${URL}/${todo.id}${SORT_BY_LAST_MODIFIED_TIME}`;
+      const updateURL = `/api/todos/${todo.id}`; // Pointing to Node.js server's endpoint
+
       const response = await axios.patch(updateURL, airtableData, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
+          // Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
         },
       });
 
@@ -94,10 +97,11 @@ function TodoContainer() {
 
   const deleteTodo = async (id) => {
     try {
-      const response = await axios.delete(`${URL}/${id}`, {
+      // const response = await axios.delete(`${URL}/${id}`, {
+      const response = await axios.delete(`/api/todos/${id}`, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
+          // Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
         },
       });
 
@@ -107,17 +111,23 @@ function TodoContainer() {
     }
   };
 
+  const removeTodo = async (id) => {
+    await deleteTodo(id);
+    setTodoList(todoList.filter((todo) => todo.id !== id));
+  };
+
   const addTodo = async (newTodo) => {
     const options = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
+        // Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
       },
     };
 
     try {
       const response = await axios.post(
-        URL,
+        // URL,
+        "/api/todos", // Pointing to Node.js server's endpoint
         { fields: { title: newTodo.title } },
         options
       );
@@ -158,11 +168,6 @@ function TodoContainer() {
     };
   }, [completionMessageTimeout]); // Dependency array
 
-  const removeTodo = async (id) => {
-    await deleteTodo(id);
-    setTodoList(todoList.filter((todo) => todo.id !== id));
-  };
-
   const onReorderTodo = (newTodoList) => {
     setTodoList(newTodoList);
   };
@@ -189,11 +194,12 @@ function TodoContainer() {
           title: newTitle,
         },
       };
-      const updateURL = `${URL}/${id}`;
+      // const updateURL = `${URL}/${id}`;
+      const updateURL = `/api/todos/${id}`; // Pointing to Node.js server's endpoint
       await axios.patch(updateURL, airtableData, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
+          // Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
         },
       });
 
