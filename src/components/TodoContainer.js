@@ -21,39 +21,55 @@ function TodoContainer() {
   const URL = `${API_BASE_URL}${AIRTABLE_BASE_ID}/${TABLE_NAME}`;
   // const SORT_BY_TITLE = "?sort[0][field]=Title&sort[0][direction]=asc";
 
-  const fetchData = async () => {
-    const fetchURL = `${URL}${SORT_BY_LAST_MODIFIED_TIME}`;
-    // const fetchURL = `${URL}${SORT_BY_TITLE}`;
-    // const fetchURL = `${URL}${SORT_BY_LAST_MODIFIED_TIME}&view=Grid%20view`;
-
-    try {
-      const response = await axios.get(fetchURL, {
-        headers: {
-          Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
-        },
-      });
-
-      const todos = response.data.records.map(
-        ({ fields: { title, completed }, id }) => ({
-          id,
-          title,
-          completed,
-        })
-      );
-      // .sort((a, b) => a.title.localeCompare(b.title)); // For ascending order
-      // .sort((a, b) => b.title.localeCompare(a.title)); // For descending order
-
-      return todos;
-    } catch (error) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    }
-  };
+  // Add cache state
+  const [cache, setCache] = useState({ data: null, timestamp: null });
+  const cacheDuration = 5 * 60 * 1000; // Cache duration in milliseconds, e.g., 5 minutes
 
   const memoizedFetchData = useCallback(async () => {
+    const fetchData = async () => {
+      const now = new Date().getTime();
+      const fetchURL = `${URL}${SORT_BY_LAST_MODIFIED_TIME}`;
+      // const fetchURL = `${URL}${SORT_BY_TITLE}`;
+      // const fetchURL = `${URL}${SORT_BY_LAST_MODIFIED_TIME}&view=Grid%20view`;
+
+      // Check if cache is valid
+      if (
+        cache.data &&
+        cache.timestamp &&
+        now - cache.timestamp < cacheDuration
+      ) {
+        return cache.data; // Return cached data if it's still fresh
+      }
+
+      // Make API request if cache is not valid
+      try {
+        const response = await axios.get(fetchURL, {
+          headers: {
+            Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
+          },
+        });
+        const todos = response.data.records.map(
+          ({ fields: { title, completed }, id }) => ({
+            id,
+            title,
+            completed,
+          })
+        );
+        // .sort((a, b) => a.title.localeCompare(b.title)) // For ascending order
+        // .sort((a, b) => b.title.localeCompare(a.title)); // For descending order
+
+        // Update cache with new data
+        setCache({ data: todos, timestamp: now });
+        return todos;
+      } catch (error) {
+        throw new Error(`Error fetching data: ${error.message}`);
+      }
+    };
+
     try {
       setIsLoading(true);
-      const todo = await fetchData();
-      setTodoList(todo);
+      const todos = await fetchData();
+      setTodoList(todos);
       setCompletionMessage("");
     } catch (error) {
       console.error("Error updating todo list: ", error);
@@ -61,7 +77,7 @@ function TodoContainer() {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [AIRTABLE_API_TOKEN, URL, cache, cacheDuration]);
 
   useEffect(() => {
     memoizedFetchData();
@@ -69,7 +85,7 @@ function TodoContainer() {
 
   useEffect(() => {
     setCount(todoList.length);
-  }, [todoList]);
+  }, [todoList, setCount]);
 
   const updateTodo = async (todo) => {
     try {
