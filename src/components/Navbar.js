@@ -8,7 +8,10 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <img src={logo} alt="Todo Logo" className={styles.logo} />
       <div className={styles.navLinks}>
-        <Link to="/" className={`${style.button} ${styles.buttonWithMargin}`}>
+        <Link
+          to="/home"
+          className={`${style.button} ${styles.buttonWithMargin}`}
+        >
           Home
         </Link>
         {/* Add more navigation links here if needed */}

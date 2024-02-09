@@ -204,6 +204,7 @@ section {
         margin: 0px;
         font-size: 16px;
         background-color: #f4f2ee;
+        padding-top: 60px;
     }
 
     section {
@@ -219,9 +220,5 @@ section {
         box-shadow: none;
         margin: 0;
         padding: 0;
-    }
-
-    h1 {
-        text-align: center;
     }
 }
