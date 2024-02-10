@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 const Chat = () => {
   const [message, setMessage] = useState("");
   const [response, setResponse] = useState([]);
-  const API_KEY = process.env.REACT_APP_API_KEY;
+  const API_KEY = process.env.REACT_APP_OPEN_API_KEY;
 
   const sendMessage = async () => {
     const apiEndpoint = "https://api.openai.com/v1/chat/completions";

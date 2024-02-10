@@ -32,7 +32,9 @@ function TodoContainer() {
       //     Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
       //   },
       // });
-      const response = await axios.get("/api/todos"); // Pointing to Node.js server's endpoint
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/todos`
+      ); // Pointing to Node.js server's endpoint
 
       const todos = response.data.records.map(
         ({ fields: { title, completed }, id }) => ({
@@ -80,7 +82,7 @@ function TodoContainer() {
         },
       };
       // const updateURL = `${URL}/${todo.id}${SORT_BY_LAST_MODIFIED_TIME}`;
-      const updateURL = `/api/todos/${todo.id}`; // Pointing to Node.js server's endpoint
+      const updateURL = `${process.env.REACT_APP_API_URL}/api/todos/${todo.id}`; // Pointing to Node.js server's endpoint
 
       const response = await axios.patch(updateURL, airtableData, {
         headers: {
@@ -98,12 +100,15 @@ function TodoContainer() {
   const deleteTodo = async (id) => {
     try {
       // const response = await axios.delete(`${URL}/${id}`, {
-      const response = await axios.delete(`/api/todos/${id}`, {
-        headers: {
-          "Content-Type": "application/json",
-          // Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
-        },
-      });
+      const response = await axios.delete(
+        `${process.env.REACT_APP_API_URL}/api/todos/${id}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            // Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
+          },
+        }
+      );
 
       return response.data;
     } catch (error) {
@@ -127,7 +132,7 @@ function TodoContainer() {
     try {
       const response = await axios.post(
         // URL,
-        "/api/todos", // Pointing to Node.js server's endpoint
+        "${process.env.REACT_APP_API_URL}/api/todos", // Pointing to Node.js server's endpoint
         { fields: { title: newTodo.title } },
         options
       );
@@ -195,7 +200,7 @@ function TodoContainer() {
         },
       };
       // const updateURL = `${URL}/${id}`;
-      const updateURL = `/api/todos/${id}`; // Pointing to Node.js server's endpoint
+      const updateURL = `${process.env.REACT_APP_API_URL}/api/todos/${id}`; // Pointing to Node.js server's endpoint
       await axios.patch(updateURL, airtableData, {
         headers: {
           "Content-Type": "application/json",

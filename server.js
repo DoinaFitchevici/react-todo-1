@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({ path: "./.env.local" });
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
@@ -8,21 +8,25 @@ const port = process.env.PORT || 5001;
 
 // Replace with your Airtable base details
 const API_BASE_URL = "https://api.airtable.com/v0/";
-const AIRTABLE_BASE_ID = process.env.REACT_APP_AIRTABLE_BASE_ID;
-const TABLE_NAME = process.env.REACT_APP_TABLE_NAME;
+const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
+const TABLE_NAME = process.env.TABLE_NAME;
 const AIRTABLE_API_TOKEN = process.env.AIRTABLE_API_TOKEN;
 const url = `${API_BASE_URL}${AIRTABLE_BASE_ID}/${TABLE_NAME}`;
 const SORT_BY_LAST_MODIFIED_TIME =
   "?sort[0][field]=completed&sort[0][direction]=asc&sort[1][field]=lastModifiedTime&sort[1][direction]=asc";
-const fetchURL = `${url}${SORT_BY_LAST_MODIFIED_TIME}`;
+const FETCH_AIRTABLE_URL = `${url}${SORT_BY_LAST_MODIFIED_TIME}`;
 
 app.use(cors()); // Enable CORS
+// { origin: "http://127.0.0.1:3000/" }
 app.use(express.json()); // Middleware to parse JSON bodies
 
 // Proxy endpoint for fetching todos from Airtable
 app.get("/api/todos", async (req, res) => {
+  // console.log("FETCH_AIRTABLE_URL", FETCH_AIRTABLE_URL);
+  // process.exit(0);
+  // return res.status(200).json({ todolist: [] });
   try {
-    const response = await axios.get(fetchURL, {
+    const response = await axios.get(FETCH_AIRTABLE_URL, {
       headers: {
         Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
       },
@@ -32,11 +36,6 @@ app.get("/api/todos", async (req, res) => {
     console.error("Error fetching todos:", error);
     res.status(500).json({ message: "Error fetching todos" });
   }
-});
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
 });
 
 // Endpoint for updating a specific todo item
@@ -94,4 +93,10 @@ app.post("/api/todos", async (req, res) => {
     console.error("Error adding new todo:", error);
     res.status(500).json({ message: "Error adding new todo" });
   }
+});
+
+console.log("Hello from server.js");
+// Start the server
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
