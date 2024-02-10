@@ -1,0 +1,24 @@
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.svg-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    display: inline-block;
+    /* Needed to properly apply the filter to the svg */
+}
+
+svg {
+    animation: slideInFromLeft 2s ease-out forwards;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+    /* Apply shadow effect */
+
+}

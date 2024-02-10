@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import todoSVG from "../todo.svg";
 import style from "./Login";
+import SvgLogo from "./SvgLogo";
 
 const Login = () => {
   let navigate = useNavigate();
@@ -17,11 +18,12 @@ const Login = () => {
           <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="w-full max-w-md space-y-8">
               <div>
-                <img
+                {/* <img
                   className="mx-auto h-15 w-auto"
                   src={todoSVG}
                   alt="Todo Logo"
-                />
+                /> */}
+                <SvgLogo />
               </div>
               <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                 <div className="-space-y-px shadow-sm">
