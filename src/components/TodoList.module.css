@@ -1,0 +1,17 @@
+.no-bullet-points {
+    list-style: none;
+    padding: 0;
+}
+
+.draggable-item {
+    cursor: grab;
+}
+
+.dragging {
+    cursor: grabbing;
+}
+
+.list-item {
+    margin: .5rem;
+    color: black;
+}

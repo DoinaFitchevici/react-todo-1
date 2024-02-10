@@ -1,17 +1,34 @@
-.div-style {
+body {
+    background-color: #f7f3f35e;
+    color: rgb(33, 33, 33);
+    font-weight: 200;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.ListItem {
+    color: black;
+    margin: .5rem;
+}
+
+div {
     margin: 5px;
 }
 
-.button {
+div button {
     margin-inline: 5px;
     cursor: pointer;
 }
 
-.completed-todo {
+.completedTodo {
     color: grey;
 }
 
-.custom-checkbox {
+.customCheckbox {
     width: 1.3em;
     height: 1.3em;
     background-color: white;
@@ -24,21 +41,27 @@
     cursor: pointer;
 }
 
-.custom-checkbox:checked {
+
+.customCheckbox:checked {
     background-color: lightgray;
 }
 
-.no-bullet-points {
+.noBulletPoints {
     list-style: none;
     padding: 0;
 }
 
-.draggable-item {
+.draggableItem {
     cursor: grab;
 }
 
 .dragging {
     cursor: grabbing;
+}
+
+h1 {
+    font-weight: 100;
+    font-variant: small-caps;
 }
 
 .button {
@@ -61,6 +84,7 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: middle;
+    /* width: 100px; */
 }
 
 .button:hover {
@@ -73,12 +97,12 @@
     outline: 0;
 }
 
-.button-with-margin {
+.buttonWithMargin {
     padding-inline: 15px;
     margin: 20px;
 }
 
-.input-style {
+input {
     padding: 2px 5px 2px 5px;
     margin: 5px;
     border: 1px solid #d5d9d9;
@@ -88,18 +112,23 @@
     line-height: 29px;
     vertical-align: middle;
     flex-grow: 1;
+    /* Allow input to grow and fill available space */
     margin-right: 8px;
+    /* Provide some space between input and button */
+
 }
 
-.form-container {
+.inputContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* Adjust if necessary */
     padding: 0;
     width: 100%;
+    /* Ensure container uses full width */
 }
 
-.container-style {
+.container {
     display: flex;
     align-items: stretch;
     justify-content: space-between;
@@ -108,20 +137,19 @@
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
-    margin: 5px;
 }
 
-.container-style:hover {
+.container:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 2px 24px;
 }
 
-.container-style:first-child,
-.container-style:last-child {
+.container .column:first-child,
+.container .column:last-child {
     flex-grow: 0;
     /* Do not grow the first and last columns */
 }
 
-.container-style:nth-child(2) {
+.container .column:nth-child(2) {
     flex-grow: 1;
     /* Grow only the middle column */
     display: flex;
@@ -130,33 +158,34 @@
     justify-content: flex-start;
 }
 
-.button-icon {
+.buttonIcon {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.edit-svg-icon {
+.editSvgIcon {
     width: 16px;
     height: 16px;
     fill: #4d5353;
 }
 
-.edit-svg-icon-hover {
+.buttonIcon:hover .editSvgIcon {
     fill: #6790bb;
 }
 
-.remove-svg-icon {
+.removeSvgIcon {
     width: 16px;
     height: 16px;
     fill: #4d5353;
 }
 
-.remove-svg-icon-hover {
+.buttonIcon:hover .removeSvgIcon {
+    /* background-color: #fee2e2; */
     fill: #fe5771;
 }
 
-.section-style {
+section {
     display: flex;
     flex-direction: column;
     min-width: 30rem;
@@ -164,10 +193,13 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     padding: 1rem;
     background-color: white;
+
 }
 
+/* Small devices (mobile, 600px and down) */
 @media (max-width: 600px) {
-    .body-mobile {
+
+    body {
         padding: 0px;
         margin: 0px;
         font-size: 16px;
@@ -175,7 +207,7 @@
         padding-top: 60px;
     }
 
-    .section-mobile {
+    section {
         background-color: #f4f2ee;
         width: fit-content;
         padding: 0px;
@@ -183,7 +215,7 @@
         box-shadow: none;
     }
 
-    .container-mobile {
+    .container {
         background-color: inherit;
         box-shadow: none;
         margin: 0;

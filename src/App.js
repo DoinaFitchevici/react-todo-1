@@ -5,6 +5,7 @@ import TodoContainer from "./components/TodoContainer";
 import TaskGeneration from "./components/TaskGeneration";
 import Chat from "./components/Chat";
 import Navbar from "./components/Navbar";
+import styles from "./components/GlobalStyles.module.css";
 
 // Create a new component for conditional rendering
 const ConditionalNavbar = () => {
@@ -19,64 +20,66 @@ const ConditionalNavbar = () => {
 };
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <ConditionalNavbar />
-              <Login />
-            </>
-          }
-        />
-        <Route
-          path="/home"
-          element={
-            <>
-              <ConditionalNavbar />
-              <LandingPage />
-            </>
-          }
-        />
-        <Route
-          path="/todolist"
-          element={
-            <>
-              <ConditionalNavbar />
-              <TodoContainer />
-            </>
-          }
-        />
-        <Route
-          path="/new"
-          element={
-            <>
-              <ConditionalNavbar />
-              <h1>New Todo List</h1>
-            </>
-          }
-        />
-        <Route
-          path="/generate-tasks"
-          element={
-            <>
-              <ConditionalNavbar />
-              <TaskGeneration />
-            </>
-          }
-        />
-        <Route
-          path="/chat"
-          element={
-            <>
-              <ConditionalNavbar />
-              <Chat />
-            </>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+    <div className={styles.App}>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <ConditionalNavbar />
+                <Login />
+              </>
+            }
+          />
+          <Route
+            path="/home"
+            element={
+              <>
+                <ConditionalNavbar />
+                <LandingPage />
+              </>
+            }
+          />
+          <Route
+            path="/todolist"
+            element={
+              <>
+                <ConditionalNavbar />
+                <TodoContainer />
+              </>
+            }
+          />
+          <Route
+            path="/new"
+            element={
+              <>
+                <ConditionalNavbar />
+                <h1>New Todo List</h1>
+              </>
+            }
+          />
+          <Route
+            path="/generate-tasks"
+            element={
+              <>
+                <ConditionalNavbar />
+                <TaskGeneration />
+              </>
+            }
+          />
+          <Route
+            path="/chat"
+            element={
+              <>
+                <ConditionalNavbar />
+                <Chat />
+              </>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
