@@ -1,11 +1,11 @@
 import "./SvgLogo.css";
 
-const SvgLogo = () => {
+const SvgLogo = ({ width = "200px", height = "200px" }) => {
   return (
-    <div className="svg-container">
+    <div className="svg-container" style={{ width, height }}>
       <svg
-        width="200px"
-        height="200px"
+        width="90%"
+        height="90%"
         viewBox="0 0 200 200"
         xmlns="http://www.w3.org/2000/svg"
       >

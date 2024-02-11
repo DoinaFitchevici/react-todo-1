@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import todoSVG from "../todo.svg";
 import style from "./Login";
 import SvgLogo from "./SvgLogo";
 

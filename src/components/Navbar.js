@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import style from "./TodoListItem.module.css";
-import logo from "../todo.svg";
+import SvgLogo from "./SvgLogo";
 
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <img src={logo} alt="Todo Logo" className={styles.logo} />
+      <SvgLogo height="50px" width="50px" />
       <div className={styles.navLinks}>
         <Link
           to="/home"

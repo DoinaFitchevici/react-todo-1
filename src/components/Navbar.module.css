@@ -15,12 +15,6 @@
     box-sizing: border-box;
 }
 
-.logo {
-    height: 50px;
-    /* Adjust based on your logo's size */
-    /* Additional logo styling here */
-}
-
 .navLinks {
     display: flex;
     align-items: center;
