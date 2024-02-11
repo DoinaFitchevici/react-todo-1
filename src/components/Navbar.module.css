@@ -19,12 +19,7 @@
     display: flex;
     align-items: center;
     /* Vertically center the navigation links */
-    gap: 20px;
+    /* gap: 20px; */
     /* Space between each navigation link */
     /* Add more styling as needed */
-}
-
-.buttonWithMargin {
-    margin-right: 10px;
-    /* Adjust the margin as needed */
 }
