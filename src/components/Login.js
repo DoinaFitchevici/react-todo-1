@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import style from "./Login";
 import SvgLogo from "./SvgLogo";
 
 const Login = () => {
@@ -11,18 +10,13 @@ const Login = () => {
     navigate("/home");
   };
   return (
-    <div className={style.body}>
+    <div>
       <div className="md:flex">
-        <div className="grid h-full bg-gray-200 md:h-screen md:w-3/5">
+        <div className="grid h-full bg-[#f7f3f35e] md:h-screen md:w-3/5">
           <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="w-full max-w-md space-y-8">
-              <div>
-                {/* <img
-                  className="mx-auto h-15 w-auto"
-                  src={todoSVG}
-                  alt="Todo Logo"
-                /> */}
-                <SvgLogo />
+              <div className="flex justify-center">
+                <SvgLogo height="200px" width="200px" transition={true} />
               </div>
               <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                 <div className="-space-y-px shadow-sm">

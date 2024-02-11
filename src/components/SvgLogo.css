@@ -16,9 +16,14 @@
     /* Needed to properly apply the filter to the svg */
 }
 
-svg {
-    animation: slideInFromLeft 2s ease-out forwards;
+.logo-svg {
     filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
-    /* Apply shadow effect */
+}
 
+.logo-svg.no-transition {
+    animation: none;
+}
+
+.logo-svg.with-transition {
+    animation: slideInFromLeft 2s ease-out forwards;
 }
