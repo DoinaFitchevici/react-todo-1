@@ -74,7 +74,7 @@ const Login = () => {
                 </div>
                 <button
                   type="submit"
-                  className="group relative flex w-full justify-center rounded-br-lg border border-transparent bg-blue-400 py-2 px-4 text-sm font-medium text-gray-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  className="group relative flex w-full justify-center rounded-br-lg rounded-bl-lg border border-transparent bg-[#7085e5] py-2 px-4 text-sm font-medium text-white hover:bg-[#8070d0] focus:outline-none focus:ring-2 focus:ring-[#6D5ACF] focus:ring-offset-2"
                 >
                   Login
                 </button>
