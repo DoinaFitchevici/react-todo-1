@@ -42,7 +42,7 @@ const Chat = () => {
   };
 
   return (
-    <section className={styles.section}>
+    <section>
       <div className={`${styles.container} ${styles.noBulletPoints}`}>
         {response.map((res, index) => (
           <div

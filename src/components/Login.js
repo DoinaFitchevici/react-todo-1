@@ -10,7 +10,12 @@ const Login = () => {
     navigate("/home");
   };
   return (
-    <div>
+    <div
+      style={{
+        height: "100vh",
+        width: "100vw",
+      }}
+    >
       <div className="md:flex">
         <div className="grid h-full bg-[#f7f3f35e] md:h-screen md:w-3/5">
           <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">

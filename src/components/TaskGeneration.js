@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import styles from "./TodoListItem.module.css";
+import style from "./TaskGeneration.module.css";
 import ReactMarkdown from "react-markdown";
 
 const TaskGeneration = () => {
@@ -32,21 +33,26 @@ const TaskGeneration = () => {
   };
 
   return (
-    <div>
+    <section>
+      <h1>
+        Generate 5 creative and engaging tasks for a todo list application
+      </h1>
+      <hr />
+      <br />
       <button onClick={generateTasks} className={styles.button}>
         Generate Tasks
       </button>
-      <div className={styles.container}>
+      <div className={style.generatedListContainer}>
         {generatedTasks.map((task, index) => (
-          // Assuming you want to treat each task as markdown content
+          // Treat each task as markdown content
           <ReactMarkdown
             key={index}
             children={task}
-            className={styles.taskItem}
+            className={style.taskItem}
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
