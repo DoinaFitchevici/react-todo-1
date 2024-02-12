@@ -33,10 +33,19 @@ div button {
     -webkit-appearance: none;
     outline: none;
     cursor: pointer;
+    transition: background-color 0.3s;
+    /* Smooth transition on hover */
+    margin-right: 10px;
 }
 
 .customCheckbox:checked {
+    width: 1.3em;
+    height: 1.3em;
     background-color: lightgray;
+    border: 1px solid #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    /* More prominent shadow for checked state */
+
 }
 
 .noBulletPoints {
@@ -106,8 +115,6 @@ input {
     vertical-align: middle;
     flex-grow: 1;
     /* Allow input to grow and fill available space */
-    margin-right: 8px;
-    /* Provide some space between input and button */
 }
 
 .inputContainer {
@@ -216,43 +223,38 @@ section {
 @media (max-width: 600px) {
 
     body {
-        padding: 0px;
-        margin: 0px;
-        font-size: 16px;
+        font-size: 14px;
         background-color: #f4f2ee;
-        padding-top: 60px;
-    }
-
-    section {
-        background-color: #f4f2ee;
-        width: 100%;
-        padding: 0px;
-        margin: 15px auto;
-        box-shadow: none;
-    }
-
-    .container {
-        background-color: inherit;
-        box-shadow: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .heading {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0px;
-        margin: 0px 15px 0px 10px;
+        padding-top: 20px;
+        min-width: fit-content;
     }
 
     .inputContainer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        /* Adjust if necessary */
+        padding: 0px 8px 10px 20px;
+    }
+
+    .editInput,
+    .container,
+    .heading,
+    .button {
+        padding: 2px 5px 2px 5px;
+    }
+
+    .heading {
+        margin: 4vw 10px 10px;
+    }
+
+    section {
+        margin: 0px;
+        padding: 30px 5px 2px 5px;
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .inputContainer,
+    .container {
         width: 100%;
-        /* Ensure container uses full width */
-        padding: 10px 8px 10px 10px;
+        /* Use percentage for responsive width */
+        box-shadow: none;
     }
 }
