@@ -5,13 +5,11 @@
     width: 100%;
     background-color: #fff;
     /* background-color: transparent; */
-    /* Make the navbar transparent */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     /* Ensure navbar stays on top of other content */
     display: flex;
     justify-content: space-between;
-    /* Space between logo and navigation links */
     padding-inline: 1rem;
     box-sizing: border-box;
 }
@@ -22,5 +20,4 @@
     /* Vertically center the navigation links */
     gap: 10px;
     /* Space between each navigation link */
-    /* Add more styling as needed */
 }
