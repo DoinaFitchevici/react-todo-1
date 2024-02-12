@@ -2,7 +2,7 @@
 
 import TodoListItem from "./TodoListItem";
 import { useState } from "react";
-import styles from "./TodoList.module.css";
+import styles from "./TodoListItem.module.css";
 import PropTypes from "prop-types";
 
 const TodoList = ({
@@ -46,10 +46,10 @@ const TodoList = ({
   };
 
   return (
-    <ul className={styles["no-bullet-points"]}>
+    <ul className={styles.noBulletPoints}>
       {todoList.map(({ id, ...rest }) => (
         <li
-          className={`${styles["list-item"]} ${styles["draggable-item"]}`}
+          className={`${styles.ListItem} ${styles.draggableItem}`}
           key={id}
           draggable
           onDragStart={(e) => {

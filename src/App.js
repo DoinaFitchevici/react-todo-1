@@ -5,7 +5,6 @@ import TodoContainer from "./components/TodoContainer";
 import TaskGeneration from "./components/TaskGeneration";
 import Chat from "./components/Chat";
 import Navbar from "./components/Navbar";
-import styles from "./components/GlobalStyles.module.css";
 
 // Create a new component for conditional rendering
 const ConditionalNavbar = () => {
@@ -20,7 +19,7 @@ const ConditionalNavbar = () => {
 };
 function App() {
   return (
-    <div className={styles.App}>
+    <div>
       <BrowserRouter>
         <Routes>
           <Route

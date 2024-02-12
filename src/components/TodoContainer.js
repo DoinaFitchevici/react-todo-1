@@ -223,14 +223,9 @@ function TodoContainer() {
     }
   };
 
-  const h1Style = {
-    fontWeight: 100, // Use camelCase for CSS properties
-    fontVariant: "small-caps", // Quote the value if it's not a number
-  };
-
   return (
     <section>
-      <h1 style={h1Style}>Todo List</h1>
+      <h1>Todo List</h1>
       <AddTodoForm onAddTodo={addTodo} />
       {completionMessage && <p>{completionMessage}</p>}
       {isLoading ? (
